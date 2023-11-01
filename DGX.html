@@ -1,0 +1,470 @@
+<!--
+	****************** JSX STUDIO *******************
+	***              			                  ***
+	***     Author : https://github.com/JSX99     ***
+	***              			                  ***
+	*** (C) 2023 JSX STUDIO, All Rights Reserved. ***
+	***              			                  ***
+	*************************************************
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" oncontextmenu="return true;">
+<head>
+
+	<title>JSX99 - DGX</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1">
+
+	<!-- META Information -->
+	<meta name="subject" content="JSX99">
+	<meta name="description" content="JSX99's WebApps Gateway">
+	<meta name="author" content="JS, https://github.com/JSX99">
+	<meta name="copyright" content="JSX99, JSX Studio">
+	<meta name="keywords" content="JSX99, JS99, WebApps, JSXWebApps, JSX99WebApps">
+
+	<!-- META : Browser Compatibility Settings -->
+	<meta name="language" content="en">
+	<meta name="color-scheme" content="auto">
+	<meta name="theme-color" content="#000">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- META : Mobile Devices Preferences -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!-- META : JSX99's WebApp Information -->
+	<meta name="JSXCRV" content="v1.0">
+	<meta name="JSXCRD" content="2023-10-06">
+	<meta name="JSXLMD" content="2023-10-06">
+	<meta name="JSXDTL" content="Name=(TDGAKSSHRR), Version=(v1.0), RequiredBy=(Client)">
+
+	<!-- LINK : ICONS, FAVICONS, SHORTCUT ICONS -->
+	<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAQZJREFUSEtjZGBg+M9AY8A4agkpITx4gku59T/D3WqQeyAAnY/uK3R5onyCzRKQwcgWIzsAXY4sS/D5BpsvybZE0KmWQci5CSMYn0wxZPj5/AJKCJJtCcw3sKAB+QBXEFJkCcyiPx+fMLDwy2CNI5Aaii1hZGFnUGr8gdMCqlgCCyZcQUWxJcjxAGL/fnub4VGfGkZhAA4umazTDE+mmeIsKXBlPmIzKdgSkOJ7tawM///9wbCImUeMQaHyJUaYg/Q87FFi+PP+PlyPdMZxBg5ZCwy1UEv+gdMArhz8/d5+hmdznVCKFbJyPHIEonsH3XKalF2kFOvY1BKVT0YtgYXAaHCRlBYA8qmgAVEb5sQAAAAASUVORK5CYII=">
+
+	<!-- LINK : EXTERNAL STYLESHEETS -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+
+	<!-- STYLE : Page Style Declaration -->
+	<style type="text/css">
+
+		@charset "utf-8";
+		
+		:root {
+			--Primary_FG: #ffffff;
+			--Primary_BG: #000000;
+		}
+
+		::Selection {
+			color: #fff;
+			background: #000;
+		}
+
+		*, *::before, *::after {
+			padding: 0;
+			margin: 0;
+			outline: none;
+			user-select: none;
+			font-family: 'Poppins', sans-serif;
+			box-sizing: border-box;
+			-webkit-font-smoothing: auto;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+
+		html, body {
+			width: 100vw;
+			height: 100vh;
+			min-width: 100vw;
+			min-height: 100vh;
+			overflow: hidden;
+		}
+
+		body {
+			color: #000;
+			background: #ffe9f5;
+		}
+
+		header {
+			position: relative;
+			top: 0;left: 0;
+			width: 100%;
+			height: 4rem;
+			color: #fff;
+			background: #650038;
+			padding: 8px;
+			padding-bottom: 4px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		header img {
+			border: none;
+			border-radius: 50%;
+			box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+			cursor: pointer;
+		}
+
+		header .head {
+			font-size: 1.5rem;
+			letter-spacing: 3px;
+			cursor: pointer;
+		}
+
+		header .reset {
+			width: 2.5rem;
+			height: 2.5rem;
+			color: #650038;
+			background: #fff;
+			font-size: 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: none;
+			border-radius: 50%;
+			box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+			cursor: pointer;
+		}
+
+		main {
+			padding: 10px 5px;
+		}
+
+		label {
+			padding: 10px;
+			cursor: pointer;
+		}
+
+		input {
+			margin: 10px;
+		}
+
+		input[type="text"] {
+			width: 100%;
+		}
+
+		input[type="button"] {
+			appearance: none;
+			-webkit-appearance: none;
+			padding: 10px;
+			color: #fff;
+			background: #650038;
+			border: none;
+			border-radius: 15px;
+			letter-spacing: 2px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.88);
+			cursor: pointer;
+		}
+
+		table {
+			width: 100%;
+		}
+
+		footer {
+			position: fixed;
+			bottom: 0;left: 0;
+			width: 100%;
+			text-align: center;
+			display: flex;
+			font-size: 16px;
+			font-weight: bold;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			padding: 10px 0;
+			cursor: pointer;
+		}
+
+		.Dropdown {
+			position: relative;
+			top: 0;left: 0;
+			width: 100%;
+			height: 3rem;
+			font-size: 1.15rem;
+			border: 2px solid #650038;
+			border-radius: 20px;
+			display: flex;
+			flex-direction: row;
+			align-content: center;
+			justify-content: center;
+			vertical-align: middle;
+			text-align: center;
+			line-height: 3rem;
+			padding: 0 10px;
+			margin: 25px 0;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+			cursor: pointer;
+		}
+		
+		.Dropdown > .JSX_SEL {
+			position: relative;
+			top: 0;left: 0;
+			width: 100%;
+			background: none;
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			border: none;
+			cursor: pointer;
+		}
+		
+		.Dropdown > .JSX_DWN {
+			font-size: 1.8rem;
+			cursor: pointer;
+		}
+
+		.GoldRates {
+			position: relative;
+			top: 0;left: 0;
+			width: 100%;
+			padding: 10px;
+			margin: 5px 0;
+		}
+
+		.GoldRates::before {
+			content: 'Gold Rates';
+			display: flex;
+			justify-content: center;
+			margin: 10px;
+			font-weight: bold;
+		}
+
+		.SilverRates {
+			position: relative;
+			top: 0;left: 0;
+			width: 100%;
+			padding: 10px;
+		}
+
+		.SilverRates::before {
+			content: 'Silver Rates';
+			display: flex;
+			justify-content: center;
+			margin: 10px;
+			font-weight: bold;
+		}
+
+		.JSX_IN {
+			appearance: none;
+			-webkit-appearance: none;
+			background: none;
+			border: none;
+			font-size: 25px;
+			width: 100%;
+			border-bottom: 2px solid #650038;
+		}
+
+
+		/* Media Queries : Mobile Devices Only */
+		@media only screen and (max-width: 480px) {
+
+			label {
+		  		font-size: 11px;
+		  	}
+
+		  	footer {
+		  		font-size: 12px;
+		  	}
+		}
+
+		/* Media Queries : Printing Layout */
+		@media print {
+
+			header, footer, .Dropdown, .JSX_SEL {
+				display: none;
+			}
+
+			input, .JSX_IN {
+				border: 0;
+				border-bottom: 0;
+				text-align: center;
+		  	}
+
+			@page {
+				margin: 0;
+			}
+		}
+
+	</style>
+</head>
+<body oncontextmenu="return true;">
+
+	<!-- HEADER -->
+	<header>
+		<img alt="logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoMTIwdjEyMEgweiIvPjxwYXRoIGQ9Ik02MCAwYzMzLjEzNyAwIDYwIDI2Ljg2MyA2MCA2MHMtMjYuODYzIDYwLTYwIDYwUzAgOTMuMTM3IDAgNjAgMjYuODYzIDAgNjAgMHptMTcuNSA2NC44MzdjLTYuNDU2IDAtMTEuODIyIDQuNTAyLTEzLjIyMiAxMC41MTYtMy4yNjctMS4zOTctNi4zLTEuMDA5LTguNTU2LS4wMzlDNTQuMjgzIDY5LjMgNDguOTE3IDY0LjgzNyA0Mi41IDY0LjgzN2MtNy41MDYgMC0xMy42MTEgNi4wOTItMTMuNjExIDEzLjU4MkMyOC44ODkgODUuOTA4IDM0Ljk5NCA5MiA0Mi41IDkyYzcuMTU2IDAgMTIuOTUtNS41MSAxMy40OTQtMTIuNDk1IDEuMTY3LS44MTUgNC4yNC0yLjMyOCA4LjAxMi4wNzhDNjQuNjI4IDg2LjUyOSA3MC4zODMgOTIgNzcuNSA5MmM3LjUwNiAwIDEzLjYxMS02LjA5MiAxMy42MTEtMTMuNTgxIDAtNy40OS02LjEwNS0xMy41ODItMTMuNjExLTEzLjU4MnptLTM1IDMuODhjNS4zNjcgMCA5LjcyMiA0LjM0NyA5LjcyMiA5LjcwMiAwIDUuMzU1LTQuMzU1IDkuNy05LjcyMiA5LjctNS4zNjcgMC05LjcyMi00LjM0NS05LjcyMi05LjcgMC01LjM1NSA0LjM1NS05LjcwMSA5LjcyMi05LjcwMXptMzUgMGM1LjM2NyAwIDkuNzIyIDQuMzQ3IDkuNzIyIDkuNzAyIDAgNS4zNTUtNC4zNTUgOS43LTkuNzIyIDkuNy01LjM2NyAwLTkuNzIyLTQuMzQ1LTkuNzIyLTkuNyAwLTUuMzU1IDQuMzU1LTkuNzAxIDkuNzIyLTkuNzAxek05NSA1N0gyNXY0aDcwdi00ek03Mi44NzQgMjkuMzRjLS44LTEuODItMi44NjYtMi43OC00Ljc4NS0yLjE0M0w2MCAyOS45MTRsLTguMTI4LTIuNzE3LS4xOTItLjA1OGMtMS45MjgtLjUzMy0zLjk1NC41MS00LjY2OSAyLjM4N0wzOC4xNDQgNTNoNDMuNzEyTDcyLjk1IDI5LjUyNnoiIGZpbGw9IiNEQURDRTAiLz48L2c+PC9zdmc+" width="45" height="45"/>
+		<span class="head">DGAKSSHRR</span>
+		<span class="reset" onclick="location.reload()">&times;</span>
+	</header>
+	
+	<!-- MAIN Content -->
+	<main>
+		
+		<section class="GoldRates">
+
+			<section class="Dropdown">
+				<select id="JSX_KGSEL" class="JSX_SEL"></select>
+				<span class="JSX_DWN">&#x25BE;</span>
+			</section>
+
+			<table>
+				<thead>
+					<tr>
+						<th>
+							<label id="JSX_LBL_GINR" for="JSX_INP_GINR" data-mode="INR ( ₹ )"></label>
+						</th>
+						<th>
+							<label id="JSX_LBL_GUSD" for="JSX_INP_GUSD" data-mode="USD ( $ )"></label>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input id="JSX_INP_GINR" class="JSX_IN" type="text" data-currSymb="₹" />
+						</td>
+						<td>
+							<input id="JSX_INP_GUSD" class="JSX_IN" type="text" data-currSymb="$" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</section>
+		
+		<section class="SilverRates">
+
+			<section class="Dropdown">
+				<select id="JSX_KSSEL" class="JSX_SEL"></select>
+				<span class="JSX_DWN">&#x25BE;</span>
+			</section>
+
+			<table>
+				<thead>
+					<tr>
+						<th>
+							<label for="JSX_INP_SINR">22Kt Silver Rate in INR ( ₹ )</label>
+						</th>
+						<th>
+							<label for="JSX_INP_SUSD">22Kt Silver Rate in USD ( $ )</label>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input id="JSX_INP_SINR" class="JSX_IN" type="text" data-currSymb="₹" />
+						</td>
+						<td>
+							<input id="JSX_INP_SUSD" class="JSX_IN" type="text" data-currSymb="$" />
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+
+		</section>
+
+	</main>
+
+	<!-- FOOTER -->
+	<footer>
+		<input type="button" value="PRINT" onclick="window.print()"/>
+		&copy;
+		<script>
+			document.write(new Date().getFullYear())
+		</script>
+		DGAKSSHRR, All rights reserved.
+	</footer>
+
+	<!-- SCRIPT -->
+	<script>
+		
+		// JS Strict-Mode
+		'use strict';
+
+		window.addEventListener('DOMContentLoaded', async function()
+		{
+			document.head.querySelector('title').textContent = "D.G. AKSSHRR Rates";
+
+			// ounce to gram conversion rate
+			const JSX_KTRange = [ 18, 22, 24 ];
+			const JSX_KMode = "${X0}Kt Gold Rate in ${X1}";
+			let _TMP = undefined;
+
+			function Init() {
+
+				_TMP = document.querySelector('#JSX_KGSEL');
+				_TMP.innerHTML = "";
+
+				JSX_KTRange.forEach((item, index) =>
+				{
+					_TMP.innerHTML += `<option value='${index}'${(index == (JSX_KTRange.length - 1) ? "selected" : "")}>${item}kt Karat</option>`
+				});
+
+				_TMP.addEventListener('change', function()
+				{
+					UpdateMode(this.value);
+				});
+
+				UpdateMode(_TMP.value);
+
+				_TMP = document.querySelector('#JSX_KSSEL');
+				_TMP.innerHTML = "";
+
+				[22].forEach((item, index) =>
+				{
+					_TMP.innerHTML += `<option value='${index}'${(index == 1 ? "selected" : "")}>${item}kt Karat</option>`
+				});
+
+				document.querySelectorAll('#JSX_INP_GINR,#JSX_INP_GUSD,#JSX_INP_SINR,#JSX_INP_SUSD').forEach(elm =>
+				{
+					
+					elm.value = elm.dataset.currsymb != "$" ? Intl.NumberFormat('en-IN',
+					{
+					  style: 'currency',
+					  currency: 'INR',
+					}).format("") :
+					Intl.NumberFormat('en-US',
+					{
+					  style: 'currency',
+					  currency: 'USD',
+					}).format("");
+
+				});
+
+				_TMP = undefined;
+			}
+
+			function UpdateMode(v) {
+
+				_TMP = JSX_KTRange[v % JSX_KTRange.length];
+
+				document.querySelectorAll('#JSX_LBL_GINR,#JSX_LBL_GUSD').forEach(elm =>
+				{
+					
+					elm.textContent = JSX_KMode.replace('${X0}', _TMP).replace('${X1}', elm.dataset.mode);
+				});
+			}
+
+			Init();
+
+			document.querySelectorAll('.JSX_IN').forEach(elm =>
+			{
+				elm.addEventListener('input', function()
+				{
+
+					_TMP = this.dataset.currsymb == "$" ? Intl.NumberFormat('en-US') : Intl.NumberFormat('en-IN');
+					this.value = `${this.dataset.currsymb} ${_TMP.format(parseFloat(this.value.replace(/[^0-9.]/g, '')))}`;
+					_TMP = undefined;
+
+				});
+			});
+
+		});
+
+	</script>
+</body>
+</html>
