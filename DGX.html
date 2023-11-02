@@ -38,11 +38,11 @@
 	<!-- META : JSX99's WebApp Information -->
 	<meta name="JSXCRV" content="v1.0">
 	<meta name="JSXCRD" content="2023-10-06">
-	<meta name="JSXLMD" content="2023-10-06">
-	<meta name="JSXDTL" content="Name=(TDGAKSSHRR), Version=(v1.0), RequiredBy=(Client)">
+	<meta name="JSXLMD" content="2023-11-01">
+	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v1.0), RequiredBy=(Client)">
 
 	<!-- LINK : ICONS, FAVICONS, SHORTCUT ICONS -->
-	<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAQZJREFUSEtjZGBg+M9AY8A4agkpITx4gku59T/D3WqQeyAAnY/uK3R5onyCzRKQwcgWIzsAXY4sS/D5BpsvybZE0KmWQci5CSMYn0wxZPj5/AJKCJJtCcw3sKAB+QBXEFJkCcyiPx+fMLDwy2CNI5Aaii1hZGFnUGr8gdMCqlgCCyZcQUWxJcjxAGL/fnub4VGfGkZhAA4umazTDE+mmeIsKXBlPmIzKdgSkOJ7tawM///9wbCImUeMQaHyJUaYg/Q87FFi+PP+PlyPdMZxBg5ZCwy1UEv+gdMArhz8/d5+hmdznVCKFbJyPHIEonsH3XKalF2kFOvY1BKVT0YtgYXAaHCRlBYA8qmgAVEb5sQAAAAASUVORK5CYII=">
+	<link rel="icon" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-LOGO.svg">
 
 	<!-- LINK : EXTERNAL STYLESHEETS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
@@ -73,12 +73,15 @@
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		}
 
+		*::-webkit-scrollbar {
+			display: none;
+		}
+
 		html, body {
 			width: 100vw;
 			height: 100vh;
 			min-width: 100vw;
 			min-height: 100vh;
-			overflow: hidden;
 		}
 
 		body {
@@ -87,10 +90,10 @@
 		}
 
 		header {
-			position: relative;
+			position: sticky;
 			top: 0;left: 0;
 			width: 100%;
-			height: 4rem;
+			height: auto;
 			color: #fff;
 			background: #650038;
 			padding: 8px;
@@ -100,12 +103,13 @@
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
+			z-index: 9999;
 		}
 
 		header img {
+			margin: 5px 0;
 			border: none;
 			border-radius: 50%;
-			box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 			cursor: pointer;
 		}
 
@@ -143,10 +147,6 @@
 			margin: 10px;
 		}
 
-		input[type="text"] {
-			width: 100%;
-		}
-
 		input[type="button"] {
 			appearance: none;
 			-webkit-appearance: none;
@@ -168,6 +168,7 @@
 			position: fixed;
 			bottom: 0;left: 0;
 			width: 100%;
+			background: inherit;
 			text-align: center;
 			display: flex;
 			font-size: 16px;
@@ -176,6 +177,7 @@
 			flex-wrap: nowrap;
 			padding: 10px 0;
 			cursor: pointer;
+			z-index: 9999;
 		}
 
 		.Dropdown {
@@ -294,7 +296,7 @@
 
 	<!-- HEADER -->
 	<header>
-		<img alt="logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoMTIwdjEyMEgweiIvPjxwYXRoIGQ9Ik02MCAwYzMzLjEzNyAwIDYwIDI2Ljg2MyA2MCA2MHMtMjYuODYzIDYwLTYwIDYwUzAgOTMuMTM3IDAgNjAgMjYuODYzIDAgNjAgMHptMTcuNSA2NC44MzdjLTYuNDU2IDAtMTEuODIyIDQuNTAyLTEzLjIyMiAxMC41MTYtMy4yNjctMS4zOTctNi4zLTEuMDA5LTguNTU2LS4wMzlDNTQuMjgzIDY5LjMgNDguOTE3IDY0LjgzNyA0Mi41IDY0LjgzN2MtNy41MDYgMC0xMy42MTEgNi4wOTItMTMuNjExIDEzLjU4MkMyOC44ODkgODUuOTA4IDM0Ljk5NCA5MiA0Mi41IDkyYzcuMTU2IDAgMTIuOTUtNS41MSAxMy40OTQtMTIuNDk1IDEuMTY3LS44MTUgNC4yNC0yLjMyOCA4LjAxMi4wNzhDNjQuNjI4IDg2LjUyOSA3MC4zODMgOTIgNzcuNSA5MmM3LjUwNiAwIDEzLjYxMS02LjA5MiAxMy42MTEtMTMuNTgxIDAtNy40OS02LjEwNS0xMy41ODItMTMuNjExLTEzLjU4MnptLTM1IDMuODhjNS4zNjcgMCA5LjcyMiA0LjM0NyA5LjcyMiA5LjcwMiAwIDUuMzU1LTQuMzU1IDkuNy05LjcyMiA5LjctNS4zNjcgMC05LjcyMi00LjM0NS05LjcyMi05LjcgMC01LjM1NSA0LjM1NS05LjcwMSA5LjcyMi05LjcwMXptMzUgMGM1LjM2NyAwIDkuNzIyIDQuMzQ3IDkuNzIyIDkuNzAyIDAgNS4zNTUtNC4zNTUgOS43LTkuNzIyIDkuNy01LjM2NyAwLTkuNzIyLTQuMzQ1LTkuNzIyLTkuNyAwLTUuMzU1IDQuMzU1LTkuNzAxIDkuNzIyLTkuNzAxek05NSA1N0gyNXY0aDcwdi00ek03Mi44NzQgMjkuMzRjLS44LTEuODItMi44NjYtMi43OC00Ljc4NS0yLjE0M0w2MCAyOS45MTRsLTguMTI4LTIuNzE3LS4xOTItLjA1OGMtMS45MjgtLjUzMy0zLjk1NC41MS00LjY2OSAyLjM4N0wzOC4xNDQgNTNoNDMuNzEyTDcyLjk1IDI5LjUyNnoiIGZpbGw9IiNEQURDRTAiLz48L2c+PC9zdmc+" width="45" height="45"/>
+		<img alt="logo" src="./Assets/media/DGAKSSHRR-LOGO.svg" width="50" height="50"/>
 		<span class="head">DGAKSSHRR</span>
 		<span class="reset" onclick="location.reload()">&times;</span>
 	</header>
