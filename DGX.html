@@ -85,6 +85,8 @@
 		body {
 			color: var(--Primary_FG);
 			background: var(--Primary_BG);
+			display: flex;
+			flex-direction: column;
 		}
 
 		header, main, footer {
@@ -102,7 +104,6 @@
 			align-items: center;
 			cursor: pointer;
 			margin: 0;
-			margin-top: 1.25rem;
 		}
 
 		header img {
@@ -164,7 +165,7 @@
 			width: 100%;
 			padding: 10px;
 			margin: 5px 0;
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-family: 'Roboto', sans-serif;
 			font-size: 18px;
 			font-weight: bold;
 			letter-spacing: 1.5px;
@@ -186,6 +187,10 @@
 			justify-content: center;
 		}
 
+		main .Rates .JSX_IN {
+			padding: 12px;
+		}
+
 		main .Rates .INPGroup span {
 			width:1.25rem;
 			font-size: 1.55rem;
@@ -204,8 +209,8 @@
 
 		main .BTNGroup {
 			width: 100%;
-			padding: 5px;
-			margin: .25rem 0;
+			padding: 4px;
+			margin: 0 16px;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
@@ -215,8 +220,9 @@
 		main .BTNGroup input[type="button"] {
 			cursor: pointer;
 			width: 100%;
-			padding: 8px 0;
-			margin: 0 3px;
+			height: 100%;
+			padding: 14px 0;
+			margin: 0 16px;
 			font-size: 14px;
 			letter-spacing: 1.25px;
 			border: 2px solid rgba(0, 0, 0, 0.1);
@@ -291,6 +297,7 @@
 		}
 
 	</style>
+
 </head>
 <body oncontextmenu="return true;">
 
@@ -312,19 +319,28 @@
 				<tbody>
 					<tr>
 						<td>
-							<label id="JSX_LBL_G18" for="JSX_INP_G18" data-mode="INR ( ₹ )">22 KT PER GRAM</label>
+							<label id="JSX_LBL_G24" for="JSX_INP_G24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
-								<input id="JSX_INP_G18" data-metal="G" class="JSX_IN" type="number" data-currSymb="₹" />
+								<input id="JSX_INP_G24" data-metal="G" class="JSX_IN" type="text" data-currSymb="₹" />
 							</div>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label id="JSX_LBL_G24" for="JSX_INP_G24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
+							<label id="JSX_LBL_G18" for="JSX_INP_G18" data-mode="INR ( ₹ )">22 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
-								<input id="JSX_INP_G24" data-metal="G" class="JSX_IN" type="number" data-currSymb="₹" />
+								<input id="JSX_INP_G18" data-metal="G" class="JSX_IN" type="text" data-currSymb="₹" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label id="JSX_LBL_G18" for="JSX_INP_G18" data-mode="INR ( ₹ )">TAX ( Percentage )</label>
+							<div class="INPGroup">
+								<span style="font-size:1.2rem">%</span>
+								<input type="number" min="0" value="10.0" max="100" />
 							</div>
 						</td>
 					</tr>
@@ -347,7 +363,7 @@
 							<label id="JSX_LBL_S24" for="JSX_INP_S24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
-								<input id="JSX_INP_S24" data-metal="S" class="JSX_IN" type="number" data-currSymb="₹" />
+								<input id="JSX_INP_S24" data-metal="S" class="JSX_IN" type="text" data-currSymb="₹" />
 							</div>
 						</td>
 					</tr>
@@ -362,8 +378,7 @@
 		</section>
 
 		<section class="BTNGroup">
-			<input id="JSX_BTN" data-action="JSXPRN" type="button" value="PRINT" />
-			<input id="JSX_BTN" data-action="JSXSHR" type="button" value="SHARE" />
+			<input id="JSX_BTN" data-action="JSXSAVE" type="button" value="SHARE" />
 		</section>
 
 	</main>
@@ -401,12 +416,38 @@
 			document.body.querySelectorAll('[id^="JSX_IN"]').forEach(elm =>
 			{
 				elm.value = "0.00";
+				
+				// Select All Texts Once Box Focused
+				elm.addEventListener('focus', function()
+				{
+					this.select();
+				});
+				
+				// Select All Texts Once Box Clicked
+				elm.addEventListener('click', function()
+				{
+					this.select();
+				});
+				
+				// If Texts Typed Validate & Format It Into Indian Numeric Formats
 				elm.addEventListener('input', function(e)
 				{
 					e.preventDefault();
 
+					this.value = this.value.replace(/[^0-9]+/g, '');
+
 					if (this.value != null && this.value != undefined)
 					{
+						// Converting Number Into Currency Format
+						_TMP = Intl.NumberFormat('en-IN',
+						{
+							currency: 'INR',
+						}).format(this.value.replace(/,/g, ''));
+
+						// Settingup Value
+						this.value = isNaN(parseInt(_TMP)) ? "0.00" : _TMP;
+
+						// Timestamp Element
 						_TMP = document.body.querySelector(this.dataset.metal === "S" ? '#JSX_LMDTS' : '#JSX_LMDTG');
 
 						if (_TMP)
@@ -434,8 +475,8 @@
 
 			function ActionHandler()
 			{
-				if (this.dataset.action === "JSXPRN") {
-
+				if (this.dataset.action === "JSXSAVE")
+				{
 					window.print();
 					return;
 				}
