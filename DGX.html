@@ -19,11 +19,11 @@
 	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1">
 
 	<!-- META Information -->
-	<meta name="subject" content="JSX99">
-	<meta name="description" content="JSX99's WebApps Gateway">
+	<meta name="subject" content="JSX - DGAKSSHRR">
+	<meta name="description" content="JSX99's DGAKSSHRR WebApp">
 	<meta name="author" content="JS, https://github.com/JSX99">
 	<meta name="copyright" content="JSX99, JSX Studio">
-	<meta name="keywords" content="JSX99, JS99, WebApps, JSXWebApps, JSX99WebApps">
+	<meta name="keywords" content="JSX99, DGAKSSHRR">
 
 	<!-- META : Browser Compatibility Settings -->
 	<meta name="language" content="en">
@@ -36,16 +36,16 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<!-- META : JSX99's WebApp Information -->
-	<meta name="JSXCRV" content="v1.0">
-	<meta name="JSXCRD" content="2023-10-06">
-	<meta name="JSXLMD" content="2023-11-01">
-	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v1.0), RequiredBy=(Client)">
+	<meta name="JSXCRV" content="v2.0">
+	<meta name="JSXCRD" content="2023-10-11">
+	<meta name="JSXLMD" content="2023-11-02">
+	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.0), RequiredBy=(Client)">
 
 	<!-- LINK : ICONS, FAVICONS, SHORTCUT ICONS -->
-	<link rel="icon" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-LOGO.svg">
+	<link rel="icon" sizes="64x64" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-LOGO.svg">
 
 	<!-- LINK : EXTERNAL STYLESHEETS -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
 
 	<!-- STYLE : Page Style Declaration -->
 	<style type="text/css">
@@ -53,13 +53,13 @@
 		@charset "utf-8";
 		
 		:root {
-			--Primary_FG: #ffffff;
-			--Primary_BG: #000000;
+			--Primary_FG: #fff;
+			--Primary_BG: #59011C;
 		}
 
 		::Selection {
 			color: #fff;
-			background: #000;
+			background: #59011C;
 		}
 
 		*, *::before, *::after {
@@ -67,14 +67,11 @@
 			margin: 0;
 			outline: none;
 			user-select: none;
-			font-family: 'Poppins', sans-serif;
+			font-family: 'Roboto', sans-serif;
+			transition: .3s;
 			box-sizing: border-box;
 			-webkit-font-smoothing: auto;
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		}
-
-		*::-webkit-scrollbar {
-			display: none;
 		}
 
 		html, body {
@@ -82,208 +79,211 @@
 			height: 100vh;
 			min-width: 100vw;
 			min-height: 100vh;
+			overflow: hidden;
 		}
 
 		body {
-			color: #000;
-			background: #ffe9f5;
+			color: var(--Primary_FG);
+			background: var(--Primary_BG);
+		}
+
+		header, main, footer {
+			position: relative;
+			width: 100%;
+			height: auto;
 		}
 
 		header {
-			position: sticky;
 			top: 0;left: 0;
-			width: 100%;
-			height: auto;
-			color: #fff;
-			background: #650038;
-			padding: 8px;
-			padding-bottom: 4px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+			padding: 1.25rem;
 			display: flex;
 			flex-direction: row;
-			justify-content: space-between;
+			justify-content: center;
 			align-items: center;
-			z-index: 9999;
+			cursor: pointer;
+			margin: 0;
+			margin-top: 1.25rem;
 		}
 
 		header img {
-			margin: 5px 0;
-			border: none;
-			border-radius: 50%;
-			cursor: pointer;
+			margin: 5px;
 		}
 
-		header .head {
-			font-size: 1.5rem;
-			letter-spacing: 3px;
-			cursor: pointer;
-		}
-
-		header .reset {
-			width: 2.5rem;
-			height: 2.5rem;
-			color: #650038;
-			background: #fff;
-			font-size: 2rem;
+		header .TitleGroup {
 			display: flex;
-			align-items: center;
-			justify-content: center;
-			border: none;
-			border-radius: 50%;
-			box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-			cursor: pointer;
+			flex-direction: column;
 		}
 
 		main {
-			padding: 10px 5px;
+			top: 0;left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 		}
 
-		label {
-			padding: 10px;
-			cursor: pointer;
+		main .Rates {
+			width: 100%;
+			padding: 0 1.2rem;
+			margin: .5rem 0;
 		}
 
-		input {
-			margin: 10px;
+		main .Rates::before {
+			content: attr(data-placeholder);
+			font-size: 1.5rem;
+			font-weight: 500;
+			letter-spacing: 1.8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0;
+			margin-bottom: 0.5rem;
 		}
 
-		input[type="button"] {
+		main .Rates table {
+			position: relative;
+			top: 0;left: 0;
+			width: 100%;
+			border: none;
+		}
+
+		main .Rates table tr td {
+			display: flex;
+			flex-direction: column;
+			padding: 5px 0;
+		}
+
+		main .Rates table tr td label {
+			font-size: 14px;
+			padding: 0 5px;
+		}
+		
+		main .Rates table tr td input {
 			appearance: none;
 			-webkit-appearance: none;
+			width: 100%;
 			padding: 10px;
-			color: #fff;
-			background: #650038;
-			border: none;
-			border-radius: 15px;
-			letter-spacing: 2px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.88);
-			cursor: pointer;
+			margin: 5px 0;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 18px;
+			font-weight: bold;
+			letter-spacing: 1.5px;
+			border: 2px solid rgba(255, 255, 255, 0.6);
+			border-radius: 12px;
 		}
 
-		table {
+		main .Rates table tr td input::-webkit-outer-spin-button,
+		main .Rates table tr td input::-webkit-inner-spin-button {
+			appearance: none;
+			-webkit-appearance: none;
+  			margin: 0;
+		}
+
+		main .Rates .INPGroup {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+
+		main .Rates .INPGroup span {
+			width:1.25rem;
+			font-size: 1.55rem;
+			margin-left: 0.25rem;
+		}
+
+		main .Rates .LMDTTXT {
+			margin: 5px 0;
+			text-align: center;
+			display: none;
+		}
+
+		main .Rates .LMDTTXT::before {
+			content: 'Last updated on ';
+		}
+
+		main .BTNGroup {
 			width: 100%;
+			padding: 5px;
+			margin: .25rem 0;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+
+		main .BTNGroup input[type="button"] {
+			cursor: pointer;
+			width: 100%;
+			padding: 8px 0;
+			margin: 0 3px;
+			font-size: 14px;
+			letter-spacing: 1.25px;
+			border: 2px solid rgba(0, 0, 0, 0.1);
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+		}
+
+		main .BTNGroup input[type="button"]:hover,
+		main .BTNGroup input[type="button"]:active {
+			color: var(--Primary_FG);
+			background: rgba(0,0,0,0.6);
+			border-color: #fff;
 		}
 
 		footer {
 			position: fixed;
 			bottom: 0;left: 0;
 			width: 100%;
-			background: inherit;
-			text-align: center;
+			margin: .25rem 0;
+			padding: .2rem 0;
+			font-size: 14px;
 			display: flex;
-			font-size: 16px;
-			font-weight: bold;
 			flex-direction: column;
-			flex-wrap: nowrap;
-			padding: 10px 0;
-			cursor: pointer;
-			z-index: 9999;
-		}
-
-		.Dropdown {
-			position: relative;
-			top: 0;left: 0;
-			width: 100%;
-			height: 3rem;
-			font-size: 1.15rem;
-			border: 2px solid #650038;
-			border-radius: 20px;
-			display: flex;
-			flex-direction: row;
-			align-content: center;
+			align-items: center;
 			justify-content: center;
-			vertical-align: middle;
-			text-align: center;
-			line-height: 3rem;
-			padding: 0 10px;
-			margin: 25px 0;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-			cursor: pointer;
 		}
 		
-		.Dropdown > .JSX_SEL {
-			position: relative;
-			top: 0;left: 0;
-			width: 100%;
-			background: none;
-			appearance: none;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			border: none;
-			cursor: pointer;
-		}
-		
-		.Dropdown > .JSX_DWN {
-			font-size: 1.8rem;
-			cursor: pointer;
-		}
-
-		.GoldRates {
-			position: relative;
-			top: 0;left: 0;
-			width: 100%;
-			padding: 10px;
-			margin: 5px 0;
-		}
-
-		.GoldRates::before {
-			content: 'Gold Rates';
-			display: flex;
-			justify-content: center;
-			margin: 10px;
-			font-weight: bold;
-		}
-
-		.SilverRates {
-			position: relative;
-			top: 0;left: 0;
-			width: 100%;
-			padding: 10px;
-		}
-
-		.SilverRates::before {
-			content: 'Silver Rates';
-			display: flex;
-			justify-content: center;
-			margin: 10px;
-			font-weight: bold;
-		}
-
-		.JSX_IN {
-			appearance: none;
-			-webkit-appearance: none;
-			background: none;
-			border: none;
-			font-size: 25px;
-			width: 100%;
-			border-bottom: 2px solid #650038;
-		}
-
-
 		/* Media Queries : Mobile Devices Only */
-		@media only screen and (max-width: 480px) {
+		@media only screen and (min-width: 480px)
+		{
+			main {
+				width: 40rem;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 
-			label {
-		  		font-size: 11px;
-		  	}
+			main .Rates::before {
+				font-size: 1.2rem;
+			}
 
-		  	footer {
-		  		font-size: 12px;
-		  	}
+			main .Rates table tr td {
+				margin: 0;
+			}
+
+			main .Rates table tr td label {
+				font-size: 12px;
+				padding: 0 5px;
+			}
+		
+			main .Rates table tr td input {
+				font-size: 14px;
+				padding: 5px 10px;
+			}
+
+			footer {
+				width: 50rem;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 
 		/* Media Queries : Printing Layout */
-		@media print {
-
-			header, footer, .Dropdown, .JSX_SEL {
+		@media print
+		{
+			main .BTNGroup, footer {
 				display: none;
 			}
-
-			input, .JSX_IN {
-				border: 0;
-				border-bottom: 0;
-				text-align: center;
-		  	}
 
 			@page {
 				margin: 0;
@@ -295,40 +295,42 @@
 <body oncontextmenu="return true;">
 
 	<!-- HEADER -->
-	<header>
-		<img alt="logo" src="./Assets/media/DGAKSSHRR-LOGO.svg" width="50" height="50"/>
-		<span class="head">DGAKSSHRR</span>
-		<span class="reset" onclick="location.reload()">&times;</span>
+	<header onclick="location.reload()">
+		<img alt="logo" src="./Assets/media/DGAKSSHRR-LOGO.svg" width="60" />
+		<div class="TitleGroup">
+			<img alt="Title" src="./Assets/media/DGAKSSHRR-Title.svg" width="120" />
+			<img alt="Tagline" src="./Assets/media/DGAKSSHRR-TagLine.svg" />
+		</div>
 	</header>
 	
 	<!-- MAIN Content -->
 	<main>
 		
-		<section class="GoldRates">
-
-			<section class="Dropdown">
-				<select id="JSX_KGSEL" class="JSX_SEL"></select>
-				<span class="JSX_DWN">&#x25BE;</span>
-			</section>
+		<section data-placeholder="Gold Rates" class="Rates">
 
 			<table>
-				<thead>
-					<tr>
-						<th>
-							<label id="JSX_LBL_GINR" for="JSX_INP_GINR" data-mode="INR ( ₹ )"></label>
-						</th>
-						<th>
-							<label id="JSX_LBL_GUSD" for="JSX_INP_GUSD" data-mode="USD ( $ )"></label>
-						</th>
-					</tr>
-				</thead>
 				<tbody>
 					<tr>
 						<td>
-							<input id="JSX_INP_GINR" class="JSX_IN" type="text" data-currSymb="₹" />
+							<label id="JSX_LBL_G18" for="JSX_INP_G18" data-mode="INR ( ₹ )">22 KT PER GRAM</label>
+							<div class="INPGroup">
+								<span>&#8377</span>
+								<input id="JSX_INP_G18" data-metal="G" class="JSX_IN" type="number" data-currSymb="₹" />
+							</div>
 						</td>
+					</tr>
+					<tr>
 						<td>
-							<input id="JSX_INP_GUSD" class="JSX_IN" type="text" data-currSymb="$" />
+							<label id="JSX_LBL_G24" for="JSX_INP_G24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
+							<div class="INPGroup">
+								<span>&#8377</span>
+								<input id="JSX_INP_G24" data-metal="G" class="JSX_IN" type="number" data-currSymb="₹" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span id="JSX_LMDTG" data-shown="0" class="LMDTTXT"></span>
 						</td>
 					</tr>
 				</tbody>
@@ -336,49 +338,39 @@
 
 		</section>
 		
-		<section class="SilverRates">
-
-			<section class="Dropdown">
-				<select id="JSX_KSSEL" class="JSX_SEL"></select>
-				<span class="JSX_DWN">&#x25BE;</span>
-			</section>
+		<section data-placeholder="Silver Rates" class="Rates">
 
 			<table>
-				<thead>
-					<tr>
-						<th>
-							<label for="JSX_INP_SINR">22Kt Silver Rate in INR ( ₹ )</label>
-						</th>
-						<th>
-							<label for="JSX_INP_SUSD">22Kt Silver Rate in USD ( $ )</label>
-						</th>
-					</tr>
-				</thead>
 				<tbody>
 					<tr>
 						<td>
-							<input id="JSX_INP_SINR" class="JSX_IN" type="text" data-currSymb="₹" />
+							<label id="JSX_LBL_S24" for="JSX_INP_S24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
+							<div class="INPGroup">
+								<span>&#8377</span>
+								<input id="JSX_INP_S24" data-metal="S" class="JSX_IN" type="number" data-currSymb="₹" />
+							</div>
 						</td>
+					</tr>
+					<tr>
 						<td>
-							<input id="JSX_INP_SUSD" class="JSX_IN" type="text" data-currSymb="$" />
+							<span id="JSX_LMDTS" data-shown="0" class="LMDTTXT"></span>
 						</td>
 					</tr>
 				</tbody>
-
 			</table>
 
+		</section>
+
+		<section class="BTNGroup">
+			<input id="JSX_BTN" data-action="JSXPRN" type="button" value="PRINT" />
+			<input id="JSX_BTN" data-action="JSXSHR" type="button" value="SHARE" />
 		</section>
 
 	</main>
 
 	<!-- FOOTER -->
 	<footer>
-		<input type="button" value="PRINT" onclick="window.print()"/>
-		&copy;
-		<script>
-			document.write(new Date().getFullYear())
-		</script>
-		DGAKSSHRR, All rights reserved.
+		<div id="JSX_RIGHTS" class="Copyrights">...</div>
 	</footer>
 
 	<!-- SCRIPT -->
@@ -389,80 +381,71 @@
 
 		window.addEventListener('DOMContentLoaded', async function()
 		{
-			document.head.querySelector('title').textContent = "D.G. AKSSHRR Rates";
-
-			// ounce to gram conversion rate
-			const JSX_KTRange = [ 18, 22, 24 ];
-			const JSX_KMode = "${X0}Kt Gold Rate in ${X1}";
 			let _TMP = undefined;
 
-			function Init() {
+			function x99(s, d = true) {
+				
+				try {
 
-				_TMP = document.querySelector('#JSX_KGSEL');
-				_TMP.innerHTML = "";
-
-				JSX_KTRange.forEach((item, index) =>
-				{
-					_TMP.innerHTML += `<option value='${index}'${(index == (JSX_KTRange.length - 1) ? "selected" : "")}>${item}kt Karat</option>`
-				});
-
-				_TMP.addEventListener('change', function()
-				{
-					UpdateMode(this.value);
-				});
-
-				UpdateMode(_TMP.value);
-
-				_TMP = document.querySelector('#JSX_KSSEL');
-				_TMP.innerHTML = "";
-
-				[22].forEach((item, index) =>
-				{
-					_TMP.innerHTML += `<option value='${index}'${(index == 1 ? "selected" : "")}>${item}kt Karat</option>`
-				});
-
-				document.querySelectorAll('#JSX_INP_GINR,#JSX_INP_GUSD,#JSX_INP_SINR,#JSX_INP_SUSD').forEach(elm =>
-				{
-					
-					elm.value = elm.dataset.currsymb != "$" ? Intl.NumberFormat('en-IN',
-					{
-					  style: 'currency',
-					  currency: 'INR',
-					}).format("") :
-					Intl.NumberFormat('en-US',
-					{
-					  style: 'currency',
-					  currency: 'USD',
-					}).format("");
-
-				});
-
-				_TMP = undefined;
+					return d === false ? new TextEncoder().encode(s) : new TextDecoder().decode(new Uint8Array(s));
+				}
+				catch {
+					console.error("Something went wrong!");
+					return undefined;
+				}
 			}
 
-			function UpdateMode(v) {
-
-				_TMP = JSX_KTRange[v % JSX_KTRange.length];
-
-				document.querySelectorAll('#JSX_LBL_GINR,#JSX_LBL_GUSD').forEach(elm =>
-				{
-					
-					elm.textContent = JSX_KMode.replace('${X0}', _TMP).replace('${X1}', elm.dataset.mode);
-				});
-			}
-
-			Init();
-
-			document.querySelectorAll('.JSX_IN').forEach(elm =>
+			document.head.querySelector('title').textContent = x99([68, 46, 71, 46, 32, 65, 75, 83, 83, 72, 82, 82, 32, 82, 97, 116, 101, 115]);
+			document.body.querySelector('#JSX_RIGHTS').innerHTML = `&copy; ${(new Date().getFullYear())} ${x99([68, 71, 65, 75, 83, 83, 72, 82, 82, 44, 32, 65, 108, 108, 32, 82, 105, 103, 104, 116, 115, 32, 82, 101, 115, 101, 114, 118, 101, 100, 46])}`;
+			
+			document.body.querySelectorAll('[id^="JSX_IN"]').forEach(elm =>
 			{
-				elm.addEventListener('input', function()
+				elm.value = "0.00";
+				elm.addEventListener('input', function(e)
 				{
+					e.preventDefault();
 
-					_TMP = this.dataset.currsymb == "$" ? Intl.NumberFormat('en-US') : Intl.NumberFormat('en-IN');
-					this.value = `${this.dataset.currsymb} ${_TMP.format(parseFloat(this.value.replace(/[^0-9.]/g, '')))}`;
-					_TMP = undefined;
+					if (this.value != null && this.value != undefined)
+					{
+						_TMP = document.body.querySelector(this.dataset.metal === "S" ? '#JSX_LMDTS' : '#JSX_LMDTG');
 
+						if (_TMP)
+						{
+							if (parseInt(_TMP.dataset.shown) != 99)
+							{
+								_TMP.dataset.shown = 99;
+								_TMP.style.display="block";
+							}
+
+							_TMP.textContent = new Intl.DateTimeFormat('en-IN',
+							{
+								day: '2-digit',
+								month: '2-digit',
+								year: 'numeric',
+								hour: '2-digit',
+								minute: '2-digit',
+								hour12: true
+							}).format(new Date()).toLocaleUpperCase();
+						}
+					
+					}
 				});
+			});
+
+			function ActionHandler()
+			{
+				if (this.dataset.action === "JSXPRN") {
+
+					window.print();
+					return;
+				}
+				
+				alert("Coming soon...");
+			}
+
+			document.body.querySelectorAll('#JSX_BTN').forEach(elm =>
+			{
+				elm.addEventListener('click', ActionHandler);
 			});
 
 		});
