@@ -53,7 +53,7 @@
 		@charset "utf-8";
 		
 		:root {
-			--Primary_FG: #fff;
+			--Primary_FG: #fadeb4;
 			--Primary_BG: #59011C;
 		}
 
@@ -79,7 +79,7 @@
 			height: 100vh;
 			min-width: 100vw;
 			min-height: 100vh;
-			overflow: hidden;
+			overflow: auto;
 		}
 
 		body {
@@ -134,6 +134,7 @@
 			font-size: 1.5rem;
 			font-weight: 500;
 			letter-spacing: 1.8px;
+			text-transform: uppercase;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -205,6 +206,7 @@
 
 		main .Rates .LMDTTXT::before {
 			content: 'Last updated on ';
+			text-transform: uppercase;
 		}
 
 		main .BTNGroup {
@@ -232,9 +234,10 @@
 
 		main .BTNGroup input[type="button"]:hover,
 		main .BTNGroup input[type="button"]:active {
-			color: var(--Primary_FG);
+			/*color: var(--Primary_FG);
 			background: rgba(0,0,0,0.6);
-			border-color: #fff;
+			*//*border-color: #fff;*/
+			transform: scale(0.96);
 		}
 
 		footer {
@@ -248,6 +251,23 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+			z-index: -1;
+		}
+
+		.JSX-UI {
+			position: fixed;
+			top: 0;left: 0;
+			/*width: 750px;
+			height: 1334px;
+			*/width: 360px;
+			height: 750px;
+			background: #59011c;
+			padding: 16px;
+			border: none;
+			box-shadow: inset 0 0 4px #fadeb4;
+			z-index: 9999;
+			display: none;
+			animation: 0.1s Scrollup ease-in;
 		}
 		
 		/* Media Queries : Mobile Devices Only */
@@ -287,28 +307,173 @@
 		/* Media Queries : Printing Layout */
 		@media print
 		{
-			main .BTNGroup, footer {
+			* {
 				display: none;
 			}
 
+			/*main .BTNGroup, footer {
+				display: none;
+			}*/
+
 			@page {
+				size: A4;
 				margin: 0;
+				scale: 100%;
+			}
+		}
+
+		@keyframes Scrollup {
+			from {
+				top: 100%;
+			}
+			to {
+				top: 0;
 			}
 		}
 
 	</style>
+
+	<script type="text/javascript" src="./Assets/js/html2canvas.js"></script>
 
 </head>
 <body oncontextmenu="return true;">
 
 	<!-- HEADER -->
 	<header onclick="location.reload()">
-		<img alt="logo" src="./Assets/media/DGAKSSHRR-LOGO.svg" width="60" />
+		<img alt="logo" src="./Assets/media/DGAKSSHRR-Logo.svg" width="60" />
 		<div class="TitleGroup">
 			<img alt="Title" src="./Assets/media/DGAKSSHRR-Title.svg" width="120" />
 			<img alt="Tagline" src="./Assets/media/DGAKSSHRR-TagLine.svg" />
 		</div>
 	</header>
+
+	<!-- SAVE-UI -->
+	<section id="SAVEUI" class="JSX-UI">
+		
+		<!-- HEADER / LOGO -->
+		<section style="
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap:5px;
+			margin:20px 0;margin-top:30px;">
+
+			<img alt="logo" src="./Assets/media/DGAKSSHRR-Logo.svg" width="60" />
+			<div style="display: flex;flex-direction: column;gap:10px">
+				<img alt="Title" src="./Assets/media/DGAKSSHRR-Title.svg" width="120" />
+				<img alt="Tagline" src="./Assets/media/DGAKSSHRR-TagLine.svg" />
+			</div>
+		
+		</section>
+
+		<!-- RATES -->
+		<section style="
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			letter-spacing: 1.2px;
+			margin:20px 0;">
+				
+			<h3 style="margin:15px 0;">CURRENT GOLD RATES</h3>
+			
+			<!-- GOLD-24 -->
+			<div style="
+				align-self: flex-start;
+				margin:5px 22px;">24KT PER GRAM</div>
+			<div style="
+				align-self: flex-start;
+				margin:5px 22px;font-size:22px;
+				font-weight: 500;
+				color:#000; background: rgba(255, 255, 255, 0.8);
+				width:286px;
+				border-radius: 5px;
+				padding:5px 10px;
+				box-sizing:border-box">&#8377&nbsp;<span id="JSX_SUI_GR24">0.00</span></div>
+			
+			<!-- GOLD-22 -->
+			<div style="
+				align-self: flex-start;
+				margin:5px 22px;margin-top:15px;">22KT PER GRAM</div>
+			<div style="
+				align-self: flex-start;
+				margin:5px 22px;font-size:22px;
+				font-weight: 500;
+				color:#000; background: rgba(255, 255, 255, 0.8);
+				width:286px;
+				border-radius: 5px;
+				padding:5px 10px;
+				box-sizing:border-box">&#8377&nbsp;<span id="JSX_SUI_GR22">0.00</span></div>
+
+			<h3 style="margin:15px 0;margin-top:20px;">CURRENT SILVER RATES</h3>
+
+			<!-- SILVER-22 -->
+			<div style="
+				align-self: flex-start;
+				margin:5px 22px;">24KT PER GRAM</div>
+			<div style="
+				align-self: flex-start;
+				margin:5px 22px;font-size:22px;
+				font-weight: 500;
+				color:#000; background: rgba(255, 255, 255, 0.8);
+				width:286px;
+				border-radius: 5px;
+				padding:5px 10px;
+				box-sizing:border-box">&#8377&nbsp;<span id="JSX_SUI_SR24">0.00</span></div>
+
+			<!-- LASTUPDATES -->
+			<div style="margin-top:30px;font-size:14px;">LAST UPDATED ON
+				<span id="JSX_SUI_LAST">00/00/0000</span>
+			</div>
+		
+		</section>
+
+		<!-- CONTACT SECTION -->
+		<section style="
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-size:0.8rem;
+			margin:15px 0;">
+
+			<div data-name="CONTACT-DETAILS"
+			style="
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-end;
+				letter-spacing: 1.25px;
+				margin:15px 0;
+				margin-bottom:10px">
+				<h3 style="align-self:center;margin:5px 0;">CONTACT US</h3>
+				<span style="font-size:14px;">HITESH R. SONI : +918128655890</span>
+				<span style="font-size:14px;">AJAY R. SONI   : +919998995121</span>
+			</div>
+			
+			<div data-name="LOCATION-DETAILS"
+			style="
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin:20px 0;
+				letter-spacing: 1.25px;">
+				<h3 style="margin:5px 0;">ADDRESS</h3>
+				<div style="
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;">
+					<img src="./Assets/media/DGAKSSHRR-Location.svg"/>
+					<span>
+						582, Kavishwar Pole,<br/>Nr. Bala Hanuman Temple,<br/>Khadia, Ahmedabad - 380001
+					</span>
+				</div>
+			</div>
+		
+		</section>
+	</section>
 	
 	<!-- MAIN Content -->
 	<main>
@@ -319,7 +484,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<label id="JSX_LBL_G24" for="JSX_INP_G24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
+							<label for="JSX_INP_G24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
 								<input id="JSX_INP_G24" data-metal="G" class="JSX_IN" type="text" data-currSymb="₹" />
@@ -328,25 +493,20 @@
 					</tr>
 					<tr>
 						<td>
-							<label id="JSX_LBL_G18" for="JSX_INP_G18" data-mode="INR ( ₹ )">22 KT PER GRAM</label>
+							<label for="JSX_INP_G22" data-mode="INR ( ₹ )">22 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
-								<input id="JSX_INP_G18" data-metal="G" class="JSX_IN" type="text" data-currSymb="₹" />
+								<input id="JSX_INP_G22" data-metal="G" class="JSX_IN" type="text" data-currSymb="₹" />
 							</div>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label id="JSX_LBL_G18" for="JSX_INP_G18" data-mode="INR ( ₹ )">TAX ( Percentage )</label>
+							<label for="JSX_INP_TXX" data-mode="INR ( ₹ )">TAX ( Percentage )</label>
 							<div class="INPGroup">
-								<span style="font-size:1.2rem">%</span>
-								<input type="number" min="0" value="10.0" max="100" />
+								<span style="font-size:1.3rem;font-weight:600;margin-right:0.1%">%&emsp;&emsp;</span>
+								<input id="JSX_INP_TXX" type="number" class="JSX_IN" min="0" value="10.0" max="100" />
 							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span id="JSX_LMDTG" data-shown="0" class="LMDTTXT"></span>
 						</td>
 					</tr>
 				</tbody>
@@ -360,16 +520,11 @@
 				<tbody>
 					<tr>
 						<td>
-							<label id="JSX_LBL_S24" for="JSX_INP_S24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
+							<label for="JSX_INP_S24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
 								<input id="JSX_INP_S24" data-metal="S" class="JSX_IN" type="text" data-currSymb="₹" />
 							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span id="JSX_LMDTS" data-shown="0" class="LMDTTXT"></span>
 						</td>
 					</tr>
 				</tbody>
@@ -378,7 +533,7 @@
 		</section>
 
 		<section class="BTNGroup">
-			<input id="JSX_BTN" data-action="JSXSAVE" type="button" value="SHARE" />
+			<input id="JSX_BTN" data-action="JSXSAVE" type="button" style="font-size:1rem;font-weight:900;letter-spacing:2px;" value="SAVE" />
 		</section>
 
 	</main>
@@ -448,7 +603,7 @@
 						this.value = isNaN(parseInt(_TMP)) ? "0.00" : _TMP;
 
 						// Timestamp Element
-						_TMP = document.body.querySelector(this.dataset.metal === "S" ? '#JSX_LMDTS' : '#JSX_LMDTG');
+						/*_TMP = document.body.querySelector(this.dataset.metal === "S" ? '#JSX_LMDTS' : '#JSX_LMDTG');
 
 						if (_TMP)
 						{
@@ -467,7 +622,7 @@
 								minute: '2-digit',
 								hour12: true
 							}).format(new Date()).toLocaleUpperCase();
-						}
+						}*/
 					
 					}
 				});
@@ -477,11 +632,53 @@
 			{
 				if (this.dataset.action === "JSXSAVE")
 				{
-					window.print();
+					let TXX = 0;
+					TXX = parseInt(document.querySelector("#JSX_INP_TXX").value ?? 0);
+
+					_TMP = undefined;
+					_TMP = document.querySelector("#JSX_INP_G24");
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_GR24").innerText = INRFormatter(TaxCounter(_TMP.value, TXX)) ?? "0.00";
+
+					_TMP = document.querySelector("#JSX_INP_G22");
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_GR22").innerText = INRFormatter(TaxCounter(_TMP.value, TXX)) ?? "0.00";
+					
+					_TMP = document.querySelector("#JSX_INP_S24");
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_SR24").innerText = INRFormatter(TaxCounter(_TMP.value, TXX)) ?? "0.00";
+
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_LAST").textContent = new Date().toLocaleDateString('en-GB');
+
+					document.querySelector("#SAVEUI").style.display = "block";
+					html2canvas(document.querySelector("#SAVEUI"))
+					.then(canvas =>
+					{
+						document.querySelector("#SAVEUI").style.display = "none";
+
+						_TMP = undefined;
+						
+						_TMP = document.createElement("a");
+						_TMP.download = new Date().getTime();
+						_TMP.href = canvas.toDataURL('image/jpeg', 1);
+						_TMP.click();
+
+						_TMP = undefined;
+					});
 					return;
 				}
-				
-				alert("Coming soon...");
+			}
+
+			function TaxCounter(amnt, tax = 0)
+			{
+				_TMP = undefined;
+				_TMP = parseInt(amnt.replace(/,/g, ''));
+				return tax == 0 ? _TMP : _TMP + ((_TMP * tax) / 100);
+			}
+
+			function INRFormatter(amnt)
+			{
+				return Intl.NumberFormat('en-IN',
+				{
+					currency: 'INR',
+				}).format(amnt);
 			}
 
 			document.body.querySelectorAll('#JSX_BTN').forEach(elm =>
