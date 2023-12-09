@@ -12,7 +12,7 @@
 <head>
 
 	<title>JSX99 - DGX</title>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,21 +28,21 @@
 	<!-- META : Browser Compatibility Settings -->
 	<meta name="language" content="en">
 	<meta name="color-scheme" content="auto">
-	<meta name="theme-color" content="#000">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="theme-color" content="#59011c">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#59011c">
 
 	<!-- META : Mobile Devices Preferences -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<!-- META : JSX99's WebApp Information -->
-	<meta name="JSXCRV" content="v2.0">
+	<meta name="JSXCRV" content="v2.2">
 	<meta name="JSXCRD" content="2023-10-11">
-	<meta name="JSXLMD" content="2023-12-08">
-	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.0), RequiredBy=(Client)">
+	<meta name="JSXLMD" content="2023-12-09">
+	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.2), RequiredBy=(Client)">
 
 	<!-- LINK : ICONS, FAVICONS, SHORTCUT ICONS -->
-	<link rel="icon" sizes="64x64" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-LOGO.svg">
+	<link rel="icon" sizes="64x64" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-Logo.svg">
 
 	<!-- LINK : EXTERNAL STYLESHEETS -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
@@ -54,7 +54,7 @@
 		
 		:root {
 			--Primary_FG: #fadeb4;
-			--Primary_BG: #59011C;
+			--Primary_BG: #59011c;
 		}
 
 		::Selection {
@@ -198,17 +198,6 @@
 			margin-left: 0.25rem;
 		}
 
-		main .Rates .LMDTTXT {
-			margin: 5px 0;
-			text-align: center;
-			display: none;
-		}
-
-		main .Rates .LMDTTXT::before {
-			content: 'Last updated on ';
-			text-transform: uppercase;
-		}
-
 		main .BTNGroup {
 			width: 100%;
 			padding: 4px;
@@ -232,11 +221,7 @@
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 		}
 
-		main .BTNGroup input[type="button"]:hover,
 		main .BTNGroup input[type="button"]:active {
-			/*color: var(--Primary_FG);
-			background: rgba(0,0,0,0.6);
-			*//*border-color: #fff;*/
 			transform: scale(0.96);
 		}
 
@@ -258,16 +243,15 @@
 			position: fixed;
 			top: 0;left: 0;
 			/*width: 750px;
-			height: 1334px;
-			*/width: 360px;
+			height: 1334px;*/
+			width: 360px;
 			height: 750px;
-			background: #59011c;
+			background: var(--Primary_BG);
 			padding: 16px;
 			border: none;
-			box-shadow: inset 0 0 4px #fadeb4;
+			box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.8);
 			z-index: 9999;
 			display: none;
-			animation: 0.1s Scrollup ease-in;
 		}
 		
 		/* Media Queries : Mobile Devices Only */
@@ -311,23 +295,10 @@
 				display: none;
 			}
 
-			/*main .BTNGroup, footer {
-				display: none;
-			}*/
-
 			@page {
 				size: A4;
 				margin: 0;
 				scale: 100%;
-			}
-		}
-
-		@keyframes Scrollup {
-			from {
-				top: 100%;
-			}
-			to {
-				top: 0;
 			}
 		}
 
@@ -358,10 +329,10 @@
 			gap:5px;
 			margin:20px 0;margin-top:30px;">
 
-			<img alt="logo" src="./Assets/media/DGAKSSHRR-LOGO.svg" width="60" />
-			<div style="display: flex;flex-direction: column;gap:10px">
-				<img alt="Title" src="./Assets/media/DGAKSSHRR-Title.svg" width="120" />
-				<img alt="Tagline" src="./Assets/media/DGAKSSHRR-TagLine.svg" />
+			<img alt="logo" src="./Assets/media/DGAKSSHRR-LOGO.svg" width="60">
+			<div style="display: flex; flex-direction: column; gap:10px">
+				<img alt="Title" src="./Assets/media/DGAKSSHRR-Title.svg" width="120">
+				<img alt="Tagline" src="./Assets/media/DGAKSSHRR-TagLine.svg">
 			</div>
 		
 		</section>
@@ -373,59 +344,96 @@
 			justify-content: center;
 			align-items: center;
 			letter-spacing: 1.2px;
-			margin:20px 0;">
+			margin:0;
+			margin-top:20px;
+			margin-bottom: 8px;">
 				
-			<h3 style="margin:15px 0;">CURRENT GOLD RATES</h3>
+			<h3 style="margin: 15px 0;">GOLD RATES</h3>
 			
 			<!-- GOLD-24 -->
 			<div style="
 				align-self: flex-start;
-				margin:5px 22px;">24KT PER GRAM</div>
+				margin: 0px 22px;
+				font-size: 14px;
+				">24KT Gold Rate</div>
 			<div style="
-				align-self: flex-start;
-				margin:5px 22px;font-size:22px;
-				font-weight: 500;
-				color:#000; background: rgba(255, 255, 255, 0.8);
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				margin: 4px 22px;
+				font-size: 20px;
+				font-weight: 700;
+				color: #59011C;
+				background: #ffefd8;
 				width:286px;
+				height: 37px;
 				border-radius: 5px;
-				padding:5px 10px;
-				box-sizing:border-box">&#8377&nbsp;<span id="JSX_SUI_GR24">0.00</span></div>
+				padding: 4px 10px;
+				box-sizing:border-box;
+				align-content: center;
+				vertical-align: middle;
+				flex-direction: row;
+				flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_GR24" style="">0.00</span></div>
 			
 			<!-- GOLD-22 -->
 			<div style="
 				align-self: flex-start;
-				margin:5px 22px;margin-top:15px;">22KT PER GRAM</div>
+				margin: 0px 22px;
+				margin-top:15px;
+				font-size: 14px;">22KT Gold Rate</div>
 			<div style="
-				align-self: flex-start;
-				margin:5px 22px;font-size:22px;
-				font-weight: 500;
-				color:#000; background: rgba(255, 255, 255, 0.8);
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				margin: 4px 22px;
+				font-size: 20px;
+				font-weight: 700;
+				color: #59011C;
+				background: #ffefd8;
 				width:286px;
+				height: 37px;
 				border-radius: 5px;
-				padding:5px 10px;
-				box-sizing:border-box">&#8377&nbsp;<span id="JSX_SUI_GR22">0.00</span></div>
+				padding: 4px 10px;
+				box-sizing:border-box;
+				align-content: center;
+				vertical-align: middle;
+				flex-direction: row;
+				flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_GR22">0.00</span></div>
 
-			<h3 style="margin:15px 0;margin-top:20px;">CURRENT SILVER RATES</h3>
+			<h3 style="margin:15px 0; margin-top: 34px;">SILVER RATES</h3>
 
 			<!-- SILVER-22 -->
 			<div style="
 				align-self: flex-start;
-				margin:5px 22px;">24KT PER GRAM</div>
+				margin: 0px 22px;
+				font-size: 14px;">24KT Silver Rate</div>
 			<div style="
-				align-self: flex-start;
-				margin:5px 22px;font-size:22px;
-				font-weight: 500;
-				color:#000; background: rgba(255, 255, 255, 0.8);
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				margin: 4px 22px;
+				font-size: 20px;
+				font-weight: 700;
+				color: #59011C;
+				background: #ffefd8;
 				width:286px;
+				height: 37px;
 				border-radius: 5px;
-				padding:5px 10px;
-				box-sizing:border-box">&#8377&nbsp;<span id="JSX_SUI_SR24">0.00</span></div>
+				padding: 4px 10px;
+				box-sizing:border-box;
+				align-content: center;
+				vertical-align: middle;
+				flex-direction: row;
+				flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_SR24">0.00</span></div>
 
 			<!-- LASTUPDATES -->
-			<div style="margin-top:30px;font-size:14px;">LAST UPDATED ON
-				<span id="JSX_SUI_LAST">00/00/0000</span>
+			<div style="font-size: 12px; font-weight: 100; align-self: flex-start; margin: 1px 22px;">
+				Last updated on <span id="JSX_SUI_LAST">00/00/0000</span>
 			</div>
-		
+
+			<div style="font-size:13px; margin: 4px 0; margin-top: 24px;">NOTE : <span id="JSX_SUI_TAX">0</span>% GST Included.</div>
+			<div style="font-size:13px;">Lagdi Available in 10, 50, 100 <span style="font-style: italic;">Gram</span></div>
+
 		</section>
 
 		<!-- CONTACT SECTION -->
@@ -435,40 +443,41 @@
 			justify-content: center;
 			align-items: center;
 			font-size:0.8rem;
-			margin:15px 0;">
+			margin:15px 0;
+			margin-top:0;">
 
-			<div data-name="CONTACT-DETAILS"
-			style="
+			<div data-name="CONTACT-DETAILS" style="
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: flex-end;
 				letter-spacing: 1.25px;
 				margin:15px 0;
-				margin-bottom:10px">
-				<h3 style="align-self:center;margin:5px 0;">CONTACT US</h3>
-				<span style="font-size:14px;">HITESH R. SONI : +918128655890</span>
-				<span style="font-size:14px;">AJAY R. SONI   : +919998995121</span>
+				margin-top: 0px;
+				margin-bottom:10px;
+				font-size: 14px;">
+				<h3 style="align-self:center; margin: 10px 0; margin-top: 20px; font-size: 16px;">CONTACT US</h3>
+				<span id="JSX_SUI_CNT0"></span>
+				<span id="JSX_SUI_CNT1" style="margin-top: 4px;"></span>
 			</div>
 			
-			<div data-name="LOCATION-DETAILS"
-			style="
+			<div data-name="LOCATION-DETAILS" style="
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
 				margin:20px 0;
+				margin-top: 0;
 				letter-spacing: 1.25px;">
-				<h3 style="margin:5px 0;">ADDRESS</h3>
+				<h3 style="margin: 10px 0; margin-top: 14px; font-size: 16px;">ADDRESS</h3>
 				<div style="
 					display: flex;
 					flex-direction: row;
 					justify-content: center;
-					align-items: center;">
-					<img src="./Assets/media/DGAKSSHRR-Location.svg"/>
-					<span>
-						582, Kavishwar Pole,<br/>Nr. Bala Hanuman Temple,<br/>Khadia, Ahmedabad - 380001
-					</span>
+					align-items: center;
+					margin: 0 22px;
+					font-size: 13px;">
+					<span id="JSX_SUI_ADD"style="text-align: center; line-height: 17px;">Gujarat, India</span>
 				</div>
 			</div>
 		
@@ -533,7 +542,7 @@
 		</section>
 
 		<section class="BTNGroup">
-			<input id="JSX_BTN" data-action="JSXSAVE" type="button" style="font-size:1rem;font-weight:900;letter-spacing:2px;" value="SAVE" />
+			<input id="JSX_BTN" data-action="JSXSAVE" type="button" style="font-size:1rem; font-weight:900; letter-spacing:2px;" value="SAVE" />
 		</section>
 
 	</main>
@@ -632,46 +641,69 @@
 			{
 				if (this.dataset.action === "JSXSAVE")
 				{
-					let TXX = 0;
-					TXX = parseInt(document.querySelector("#JSX_INP_TXX").value ?? 0);
-
 					_TMP = undefined;
 					_TMP = document.querySelector("#JSX_INP_G24");
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_GR24").innerText = INRFormatter(TaxCounter(_TMP.value, TXX)) ?? "0.00";
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_GR24").innerText = /*INRFormatter(TaxCounter(*/_TMP.value/*, TXX))*/ ?? "0.00";
 
 					_TMP = document.querySelector("#JSX_INP_G22");
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_GR22").innerText = INRFormatter(TaxCounter(_TMP.value, TXX)) ?? "0.00";
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_GR22").innerText = /*INRFormatter(TaxCounter(*/_TMP.value/*, TXX))*/ ?? "0.00";
 					
 					_TMP = document.querySelector("#JSX_INP_S24");
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_SR24").innerText = INRFormatter(TaxCounter(_TMP.value, TXX)) ?? "0.00";
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_SR24").innerText = /*INRFormatter(TaxCounter(*/_TMP.value/*, TXX))*/ ?? "0.00";
 
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_TAX").textContent =  document.querySelector("#JSX_INP_TXX").value ?? "0";
 					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_LAST").textContent = new Date().toLocaleDateString('en-GB');
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_CNT0").textContent = x99([72, 105, 116, 101, 115, 104, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 56, 49, 50, 56, 54, 53, 53, 56, 57, 48]);
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_CNT1").textContent = x99([65, 106, 97, 121, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 57, 57, 57, 56, 57, 57, 53, 49, 50, 49]);
+					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_ADD").textContent = x99([53, 56, 50, 44, 32, 75, 97, 118, 105, 115, 104, 119, 97, 114, 32, 80, 111, 108, 101, 44, 78, 114, 46, 32, 66, 97, 108, 97, 32, 72, 97, 110, 117, 109, 97, 110, 32, 84, 101, 109, 112, 108, 101, 44, 32, 75, 104, 97, 100, 105, 97, 44, 32, 65, 104, 109, 101, 100, 97, 98, 97, 100, 32, 45, 32, 51, 56, 48, 48, 48, 49]);
 
-					document.querySelector("#SAVEUI").style.display = "block";
-					html2canvas(document.querySelector("#SAVEUI"))
+					html2canvas(document.querySelector("#SAVEUI"),
+					{
+						allowTaint: true,
+						logging: false,
+						onclone: function (clonedDoc) {
+
+							ToggleInputs(true);
+							clonedDoc.getElementById("SAVEUI").style.display = "block";
+						},
+						removeContainer: true,
+						windowWidth: window.innerWidth,
+						windowHeight: window.innerHeight,
+					})
 					.then(canvas =>
 					{
 						document.querySelector("#SAVEUI").style.display = "none";
+						ToggleInputs(false);
 
 						_TMP = undefined;
 						
 						_TMP = document.createElement("a");
-						_TMP.download = new Date().getTime();
-						_TMP.href = canvas.toDataURL('image/jpeg', 1);
+						_TMP.download = `JSX-${new Date().getTime()}`;
+						_TMP.href = canvas.toDataURL('image/png');
 						_TMP.click();
 
 						_TMP = undefined;
 					});
 					return;
 				}
+				else
+				{
+					if (navigator.share) {
+						navigator.share({
+							title: "Gold / Silver Rates",
+							text: "Hi There, here's the new Rates from D.G. AKSSHRR",
+							url: 'https://JSX99.github.io/'
+						}).then(s => console.log(s));
+					}
+				}
 			}
 
-			function TaxCounter(amnt, tax = 0)
+			/*function TaxCounter(amnt, tax = 0)
 			{
 				_TMP = undefined;
 				_TMP = parseInt(amnt.replace(/,/g, ''));
 				return tax == 0 ? _TMP : _TMP + ((_TMP * tax) / 100);
-			}
+			}*/
 
 			function INRFormatter(amnt)
 			{
@@ -679,6 +711,16 @@
 				{
 					currency: 'INR',
 				}).format(amnt);
+			}
+
+			function ToggleInputs(disable)
+			{
+				document.querySelectorAll(".JSX_IN").forEach((elm) =>
+				{
+					elm.disabled = disable;
+					elm.blur();
+				});
+
 			}
 
 			document.body.querySelectorAll('#JSX_BTN').forEach(elm =>
