@@ -14,7 +14,8 @@
 	<title>JSX99 - DGX</title>
 	<meta charset="utf-8">
 	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store">
+	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1">
 
@@ -36,10 +37,10 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<!-- META : JSX99's WebApp Information -->
-	<meta name="JSXCRV" content="v2.2">
+	<meta name="JSXCRV" content="v2.3">
 	<meta name="JSXCRD" content="2023-10-11">
-	<meta name="JSXLMD" content="2023-12-09">
-	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.2), RequiredBy=(Client)">
+	<meta name="JSXLMD" content="2023-12-11">
+	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.3), RequiredBy=(Client)">
 
 	<!-- LINK : ICONS, FAVICONS, SHORTCUT ICONS -->
 	<link rel="icon" sizes="64x64" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-Logo.svg">
@@ -172,6 +173,13 @@
 			letter-spacing: 1.5px;
 			border: 2px solid rgba(255, 255, 255, 0.6);
 			border-radius: 12px;
+			transition: .2s;
+		}
+
+		main .Rates table tr td input:disabled {
+			color: var(--Primary_FG);
+			background: transparent;
+			border-color: var(--Primary_FG);
 		}
 
 		main .Rates table tr td input::-webkit-outer-spin-button,
@@ -219,10 +227,17 @@
 			border: 2px solid rgba(0, 0, 0, 0.1);
 			border-radius: 10px;
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			transition: .2s;
 		}
 
-		main .BTNGroup input[type="button"]:active {
+		main .BTNGroup input[type="button"]:enabled:active {
 			transform: scale(0.96);
+		}
+
+		main .BTNGroup input[type="button"]:disabled {
+			color: var(--Primary_FG);
+			background: transparent;
+			border-color: transparent;
 		}
 
 		footer {
@@ -291,14 +306,15 @@
 		/* Media Queries : Printing Layout */
 		@media print
 		{
-			* {
+			*,
+			*::before,
+			*::after {
 				display: none;
 			}
 
 			@page {
 				size: A4;
 				margin: 0;
-				scale: 100%;
 			}
 		}
 
@@ -310,7 +326,7 @@
 <body oncontextmenu="return true;">
 
 	<!-- HEADER -->
-	<header onclick="location.reload()">
+	<header onclick="location.reload(true)">
 		<img alt="logo" src="./Assets/media/DGAKSSHRR-Logo.svg" width="60" />
 		<div class="TitleGroup">
 			<img alt="Title" src="./Assets/media/DGAKSSHRR-Title.svg" width="120" />
@@ -322,15 +338,10 @@
 	<section id="SAVEUI" class="JSX-UI">
 		
 		<!-- HEADER / LOGO -->
-		<section style="
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap:5px;
-			margin:20px 0;margin-top:30px;">
+		<section style="display: flex;justify-content: center;align-items: center;gap:5px;margin:20px 0;margin-top:30px;">
 
 			<img alt="logo" src="./Assets/media/DGAKSSHRR-Logo.svg" width="60">
-			<div style="display: flex; flex-direction: column; gap:10px">
+			<div style="display: flex;flex-direction: column;gap:10px">
 				<img alt="Title" src="./Assets/media/DGAKSSHRR-Title.svg" width="120">
 				<img alt="Tagline" src="./Assets/media/DGAKSSHRR-TagLine.svg">
 			</div>
@@ -338,145 +349,46 @@
 		</section>
 
 		<!-- RATES -->
-		<section style="
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			letter-spacing: 1.2px;
-			margin:0;
-			margin-top:20px;
-			margin-bottom: 8px;">
+		<section style="display: flex;flex-direction: column;justify-content: center;align-items: center;letter-spacing: 1.2px;margin:0;margin-top:20px;margin-bottom: 8px;">
 				
 			<h3 style="margin: 15px 0;">GOLD RATES</h3>
 			
 			<!-- GOLD-24 -->
-			<div style="
-				align-self: flex-start;
-				margin: 0px 22px;
-				font-size: 14px;
-				">24KT Gold Rate</div>
-			<div style="
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
-				margin: 4px 22px;
-				font-size: 20px;
-				font-weight: 700;
-				color: #59011C;
-				background: #ffefd8;
-				width:286px;
-				height: 37px;
-				border-radius: 5px;
-				padding: 4px 10px;
-				box-sizing:border-box;
-				align-content: center;
-				vertical-align: middle;
-				flex-direction: row;
-				flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_GR24" style="">0.00</span></div>
+			<div style="align-self: flex-start;margin: 0px 22px;font-size: 14px;">24KT Gold Rate</div>
+			<div style="display: flex;align-items: center;justify-content: flex-start;margin: 4px 22px;font-size: 20px;font-weight: 700;color: #59011c;background: #ffefd8;width:286px;height: 37px;border-radius: 5px;padding: 4px 10px;box-sizing:border-box;align-content: center;vertical-align: middle;flex-direction: row;flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_GR24" style="">0.00</span></div>
 			
 			<!-- GOLD-22 -->
-			<div style="
-				align-self: flex-start;
-				margin: 0px 22px;
-				margin-top:15px;
-				font-size: 14px;">22KT Gold Rate</div>
-			<div style="
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
-				margin: 4px 22px;
-				font-size: 20px;
-				font-weight: 700;
-				color: #59011C;
-				background: #ffefd8;
-				width:286px;
-				height: 37px;
-				border-radius: 5px;
-				padding: 4px 10px;
-				box-sizing:border-box;
-				align-content: center;
-				vertical-align: middle;
-				flex-direction: row;
-				flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_GR22">0.00</span></div>
+			<div style="align-self: flex-start;margin: 0px 22px;margin-top:15px;font-size: 14px;">22KT Gold Rate</div>
+			<div style="display: flex;align-items: center;justify-content: flex-start;margin: 4px 22px;font-size: 20px;font-weight: 700;color: #59011C;background: #ffefd8;width:286px;height: 37px;border-radius: 5px;padding: 4px 10px;box-sizing:border-box;align-content: center;vertical-align: middle;flex-direction: row;flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_GR22">0.00</span></div>
 
 			<h3 style="margin:15px 0; margin-top: 34px;">SILVER RATES</h3>
 
 			<!-- SILVER-22 -->
-			<div style="
-				align-self: flex-start;
-				margin: 0px 22px;
-				font-size: 14px;">24KT Silver Rate</div>
-			<div style="
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
-				margin: 4px 22px;
-				font-size: 20px;
-				font-weight: 700;
-				color: #59011C;
-				background: #ffefd8;
-				width:286px;
-				height: 37px;
-				border-radius: 5px;
-				padding: 4px 10px;
-				box-sizing:border-box;
-				align-content: center;
-				vertical-align: middle;
-				flex-direction: row;
-				flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_SR24">0.00</span></div>
+			<div style="align-self: flex-start;margin: 0px 22px;font-size: 14px;">24KT Silver Rate</div>
+			<div style="display: flex;align-items: center;justify-content: flex-start;margin: 4px 22px;font-size: 20px;font-weight: 700;color: #59011C;background: #ffefd8;width:286px;height: 37px;border-radius: 5px;padding: 4px 10px;box-sizing:border-box;align-content: center;vertical-align: middle;flex-direction: row;flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_SR24">0.00</span></div>
 
 			<!-- LASTUPDATES -->
 			<div style="font-size: 12px; font-weight: 100; align-self: flex-start; margin: 1px 22px;">
 				Last updated on <span id="JSX_SUI_LAST">00/00/0000</span>
 			</div>
 
-			<div style="font-size:13px; margin: 4px 0; margin-top: 24px;">NOTE : <span id="JSX_SUI_TAX">0</span>% GST Included.</div>
+			<div style="font-size:13px; margin: 4px 0; margin-top: 24px;visibility: hidden;">NOTE : <span id="JSX_SUI_TAX">0</span>% GST Included.</div>
 			<div style="font-size:13px;">LAGDI : 1, 2, 5, 10, 20, 50, 100 g</div>
 
 		</section>
 
 		<!-- CONTACT SECTION -->
-		<section style="
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			font-size:0.8rem;
-			margin:15px 0;
-			margin-top:0;">
+		<section style="display: flex;flex-direction: column;justify-content: center;align-items: center;font-size:0.8rem;margin:15px 0;margin-top:0;">
 
-			<div data-name="CONTACT-DETAILS" style="
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: flex-end;
-				letter-spacing: 1.25px;
-				margin:15px 0;
-				margin-top: 0px;
-				margin-bottom:10px;
-				font-size: 14px;">
+			<div data-name="CONTACT-DETAILS" style="display: flex;flex-direction: column;justify-content: center;align-items: flex-end;letter-spacing: 1.25px;margin:15px 0;margin-top: 0px;margin-bottom:10px;font-size: 14px;">
 				<h3 style="align-self:center; margin: 10px 0; margin-top: 20px; font-size: 16px;">CONTACT US</h3>
 				<span id="JSX_SUI_CNT0"></span>
 				<span id="JSX_SUI_CNT1" style="margin-top: 4px;"></span>
 			</div>
 			
-			<div data-name="LOCATION-DETAILS" style="
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				margin:20px 0;
-				margin-top: 0;
-				letter-spacing: 1.25px;">
+			<div data-name="LOCATION-DETAILS" style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin:20px 0;margin-top: 0;letter-spacing: 1.25px;">
 				<h3 style="margin: 10px 0; margin-top: 14px; font-size: 16px;">ADDRESS</h3>
-				<div style="
-					display: flex;
-					flex-direction: row;
-					justify-content: center;
-					align-items: center;
-					margin: 0 22px;
-					font-size: 13px;">
+				<div style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin: 0 22px;font-size: 13px;">
 					<span id="JSX_SUI_ADD"style="text-align: center; line-height: 17px;">Gujarat, India</span>
 				</div>
 			</div>
@@ -496,7 +408,7 @@
 							<label for="JSX_INP_G24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
-								<input id="JSX_INP_G24" data-metal="G" class="JSX_IN" type="text" data-currSymb="₹" />
+								<input id="JSX_INP_G24" title="Enter 24KT Gold Rate" data-metal="G" class="JSX_IN" type="text"/>
 							</div>
 						</td>
 					</tr>
@@ -505,7 +417,7 @@
 							<label for="JSX_INP_G22" data-mode="INR ( ₹ )">22 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
-								<input id="JSX_INP_G22" data-metal="G" class="JSX_IN" type="text" data-currSymb="₹" />
+								<input id="JSX_INP_G22" title="Enter 22KT Gold Rate" data-metal="G" class="JSX_IN" type="text"/>
 							</div>
 						</td>
 					</tr>
@@ -514,7 +426,7 @@
 							<label for="JSX_INP_TXX" data-mode="INR ( ₹ )">GST</label>
 							<div class="INPGroup">
 								<span style="font-size:1.3rem;font-weight:600;margin-right:0.1%">%&emsp;&emsp;</span>
-								<input id="JSX_INP_TXX" type="number" class="JSX_IN" min="0" value="10.0" max="100" />
+								<input id="JSX_INP_TXX" title="Enter GST Percentage" class="JSX_IN" type="number" min="0" value="10" max="100" />
 							</div>
 						</td>
 					</tr>
@@ -532,7 +444,7 @@
 							<label for="JSX_INP_S24" data-mode="INR ( ₹ )">24 KT PER GRAM</label>
 							<div class="INPGroup">
 								<span>&#8377</span>
-								<input id="JSX_INP_S24" data-metal="S" class="JSX_IN" type="text" data-currSymb="₹" />
+								<input id="JSX_INP_S24" title="Enter Silver Rate" data-metal="S" class="JSX_IN" type="text"/>
 							</div>
 						</td>
 					</tr>
@@ -560,8 +472,14 @@
 
 		window.addEventListener('DOMContentLoaded', async function()
 		{
+			// Reusable Variable
 			let _TMP = undefined;
 
+			// Settingup Title Dynamically / Programatically
+			document.head.querySelector('title').textContent = x99([68, 46, 71, 46, 32, 65, 75, 83, 83, 72, 82, 82, 32, 82, 97, 116, 101, 115]);
+			document.body.querySelector('#JSX_RIGHTS').innerHTML = `&copy; ${(new Date().getFullYear())} ${x99([68, 71, 65, 75, 83, 83, 72, 82, 82, 44, 32, 65, 108, 108, 32, 82, 105, 103, 104, 116, 115, 32, 82, 101, 115, 101, 114, 118, 101, 100, 46])}`;
+
+			// Function To Encode / Decode Binary Data into String
 			function x99(s, d = true) {
 				
 				try {
@@ -574,88 +492,64 @@
 				}
 			}
 
-			document.head.querySelector('title').textContent = x99([68, 46, 71, 46, 32, 65, 75, 83, 83, 72, 82, 82, 32, 82, 97, 116, 101, 115]);
-			document.body.querySelector('#JSX_RIGHTS').innerHTML = `&copy; ${(new Date().getFullYear())} ${x99([68, 71, 65, 75, 83, 83, 72, 82, 82, 44, 32, 65, 108, 108, 32, 82, 105, 103, 104, 116, 115, 32, 82, 101, 115, 101, 114, 118, 101, 100, 46])}`;
-			
-			document.body.querySelectorAll('[id^="JSX_IN"]').forEach(elm =>
+			// Function To Format The Number Into Indian Currency Format
+			function INRFormatter(amnt)
 			{
-				elm.value = "0.00";
-				
-				// Select All Texts Once Box Focused
-				elm.addEventListener('focus', function()
+				return Intl.NumberFormat('en-IN',
 				{
-					this.select();
-				});
-				
-				// Select All Texts Once Box Clicked
-				elm.addEventListener('click', function()
-				{
-					this.select();
-				});
-				
-				// If Texts Typed Validate & Format It Into Indian Numeric Formats
-				elm.addEventListener('input', function(e)
-				{
-					e.preventDefault();
+					currency: 'INR',
+					minimumFractionDigits: 2,
+					maximumFractionDigits: 2
+				}).format(amnt);
+			}
 
-					this.value = this.value.replace(/[^0-9]+/g, '');
-
-					if (this.value != null && this.value != undefined)
-					{
-						// Converting Number Into Currency Format
-						_TMP = Intl.NumberFormat('en-IN',
-						{
-							currency: 'INR',
-						}).format(this.value.replace(/,/g, ''));
-
-						// Settingup Value
-						this.value = isNaN(parseInt(_TMP)) ? "0.00" : _TMP;
-
-						// Timestamp Element
-						/*_TMP = document.body.querySelector(this.dataset.metal === "S" ? '#JSX_LMDTS' : '#JSX_LMDTG');
-
-						if (_TMP)
-						{
-							if (parseInt(_TMP.dataset.shown) != 99)
-							{
-								_TMP.dataset.shown = 99;
-								_TMP.style.display="block";
-							}
-
-							_TMP.textContent = new Intl.DateTimeFormat('en-IN',
-							{
-								day: '2-digit',
-								month: '2-digit',
-								year: 'numeric',
-								hour: '2-digit',
-								minute: '2-digit',
-								hour12: true
-							}).format(new Date()).toLocaleUpperCase();
-						}*/
-					
-					}
-				});
-			});
-
-			function ActionHandler()
+			// Function To Enable / Disable All Inputs Fields
+			function ToggleInputs(disable)
 			{
+				document.querySelectorAll(".JSX_IN, #JSX_BTN").forEach((elm) =>
+				{
+					elm.disabled = disable;
+					elm.blur();
+				});
+			}
+
+			// Function To Add Tax Rate To The Amount
+			/*function TaxCounter(amnt, tax = 0)
+			{
+				_TMP = undefined;
+				_TMP = parseInt(amnt.replace(/,/g, ''));
+				return tax == 0 ? _TMP : _TMP + ((_TMP * tax) / 100);
+			}*/
+
+			function ActionHandler(e)
+			{
+				e.preventDefault();
+
 				if (this.dataset.action === "JSXSAVE")
 				{
+					this.disabled = true;
+
 					_TMP = undefined;
-					_TMP = document.querySelector("#JSX_INP_G24");
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_GR24").innerText = /*INRFormatter(TaxCounter(*/_TMP.value/*, TXX))*/ ?? "0.00";
-
-					_TMP = document.querySelector("#JSX_INP_G22");
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_GR22").innerText = /*INRFormatter(TaxCounter(*/_TMP.value/*, TXX))*/ ?? "0.00";
+					_TMP = document.querySelector('#SAVEUI');
 					
-					_TMP = document.querySelector("#JSX_INP_S24");
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_SR24").innerText = /*INRFormatter(TaxCounter(*/_TMP.value/*, TXX))*/ ?? "0.00";
+					// GOLD 24
+					_TMP.querySelector("#JSX_SUI_GR24").innerText = INRFormatter(document.querySelector("#JSX_INP_G24").value) ?? "0.00";
 
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_TAX").textContent =  document.querySelector("#JSX_INP_TXX").value ?? "0";
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_LAST").textContent = new Date().toLocaleDateString('en-GB');
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_CNT0").textContent = x99([72, 105, 116, 101, 115, 104, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 56, 49, 50, 56, 54, 53, 53, 56, 57, 48]);
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_CNT1").textContent = x99([65, 106, 97, 121, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 57, 57, 57, 56, 57, 57, 53, 49, 50, 49]);
-					document.querySelector('#SAVEUI').querySelector("#JSX_SUI_ADD").textContent = x99([53, 56, 50, 44, 32, 75, 97, 118, 105, 115, 104, 119, 97, 114, 32, 80, 111, 108, 101, 44, 78, 114, 46, 32, 66, 97, 108, 97, 32, 72, 97, 110, 117, 109, 97, 110, 32, 84, 101, 109, 112, 108, 101, 44, 32, 75, 104, 97, 100, 105, 97, 44, 32, 65, 104, 109, 101, 100, 97, 98, 97, 100, 32, 45, 32, 51, 56, 48, 48, 48, 49]);
+					// GOLD 22
+					_TMP.querySelector("#JSX_SUI_GR22").innerText = INRFormatter(document.querySelector("#JSX_INP_G22").value) ?? "0.00";
+					
+					// SILVER 24
+					_TMP.querySelector("#JSX_SUI_SR24").innerText = INRFormatter(document.querySelector("#JSX_INP_S24").value) ?? "0.00";
+
+					// TAX
+					_TMP.querySelector("#JSX_SUI_TAX").textContent = document.querySelector("#JSX_INP_TXX").value ?? 0;
+					_TMP.querySelector("#JSX_SUI_TAX").parentElement.style.visibility = document.querySelector("#JSX_INP_TXX").value == 0 ? "hidden" : "visible";
+					
+					
+					_TMP.querySelector("#JSX_SUI_LAST").textContent = new Date().toLocaleDateString('en-GB');
+					_TMP.querySelector("#JSX_SUI_CNT0").textContent = x99([72, 105, 116, 101, 115, 104, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 56, 49, 50, 56, 54, 53, 53, 56, 57, 48]);
+					_TMP.querySelector("#JSX_SUI_CNT1").textContent = x99([65, 106, 97, 121, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 57, 57, 57, 56, 57, 57, 53, 49, 50, 49]);
+					_TMP.querySelector("#JSX_SUI_ADD").textContent = x99([53, 56, 50, 44, 32, 75, 97, 118, 105, 115, 104, 119, 97, 114, 32, 80, 111, 108, 101, 44, 32, 78, 114, 46, 32, 66, 97, 108, 97, 32, 72, 97, 110, 117, 109, 97, 110, 32, 84, 101, 109, 112, 108, 101, 44, 32, 75, 104, 97, 100, 105, 97, 44, 32, 65, 104, 109, 101, 100, 97, 98, 97, 100, 32, 45, 32, 51, 56, 48, 48, 48, 49]);
 
 					html2canvas(document.querySelector("#SAVEUI"),
 					{
@@ -675,56 +569,110 @@
 						document.querySelector("#SAVEUI").style.display = "none";
 						ToggleInputs(false);
 
-						_TMP = undefined;
-						
-						_TMP = document.createElement("a");
-						_TMP.download = `JSX-${new Date().getTime()}`;
-						_TMP.href = canvas.toDataURL('image/png');
-						_TMP.click();
+						if (navigator.share)
+						{
+							canvas.toBlob((blb) =>
+							{
+								_TMP = undefined;
+								_TMP = new File([blb], `JSX-${new Date().getTime()}.png`, { type: 'image/png' });
 
-						_TMP = undefined;
+								navigator.share(
+								{
+									title: "DGAKSSHRR's Gold & Silver Rates",
+									text: "DGAKSSHRR's Daily Gold & Silver Rates",
+									files: [_TMP]
+								});
+
+								_TMP = undefined;
+								document.body.querySelector('#JSX_BTN').disabled = false;
+							});
+						}
+						else
+						{
+							_TMP = undefined;
+						
+							_TMP = document.createElement("a");
+							_TMP.download = `JSX-${new Date().getTime()}`;
+							_TMP.href = canvas.toDataURL('image/png');
+							_TMP.click();
+
+							_TMP = undefined;
+						}
+
 					});
+
 					return;
 				}
-				else
+			}
+
+			// EventListener Setup For All Input Elements
+			document.body.querySelectorAll('[id^="JSX_IN"]').forEach(elm =>
+			{
+				// Settingup Default Value
+				elm.value = (elm.dataset.metal) ? "0" : "10";
+				
+				// Select All Texts Once Box Focused
+				elm.addEventListener('focus', function()
 				{
-					if (navigator.share) {
-						navigator.share({
-							title: "Gold / Silver Rates",
-							text: "Hi There, here's the new Rates from D.G. AKSSHRR",
-							url: 'https://JSX99.github.io/'
-						}).then(s => console.log(s));
-					}
+					this.select();
+				});
+				
+				// Select All Texts Once Box Clicked
+				elm.addEventListener('click', function()
+				{
+					this.select();
+				});
+				
+				if (elm.dataset.metal)
+				{
+					// If Texts Typed Validate & Format It Into Indian Numeric Formats
+					elm.addEventListener('input', function(e)
+					{
+						e.preventDefault();
+
+						// Excluding Characters Except Numbers & Decimal Symbol
+						this.value = this.value.replace(/[^0-9.]+/g, '');
+
+						if (this.value != undefined && this.value != null)
+						{
+							// Formatting Value Into Indian Currency Format
+							_TMP = this.value || INRFormatter(this.value);
+
+							// Settingup Value
+							this.value = isNaN(_TMP) ? "0" : _TMP;
+						}
+					});
+
+					return;
 				}
-			}
 
-			/*function TaxCounter(amnt, tax = 0)
-			{
-				_TMP = undefined;
-				_TMP = parseInt(amnt.replace(/,/g, ''));
-				return tax == 0 ? _TMP : _TMP + ((_TMP * tax) / 100);
-			}*/
-
-			function INRFormatter(amnt)
-			{
-				return Intl.NumberFormat('en-IN',
+				// If Texts Typed Validate & Format It Into Indian Numeric Formats
+				elm.addEventListener('input', function(e)
 				{
-					currency: 'INR',
-				}).format(amnt);
-			}
+					_TMP = undefined;
+					
+					e.preventDefault();
 
-			function ToggleInputs(disable)
-			{
-				document.querySelectorAll(".JSX_IN").forEach((elm) =>
-				{
-					elm.disabled = disable;
-					elm.blur();
+					// Excluding Characters Except Numbers & Decimal Symbol
+					_TMP = Number(this.value);
+
+					if (_TMP != undefined && _TMP != null)
+					{
+						// Setting Up Number To Be Range Between 1-100
+						this.value = _TMP < 1 || _TMP > 100 ? 0 : _TMP;
+					}
 				});
 
-			}
+			});
 
-			document.body.querySelectorAll('#JSX_BTN').forEach(elm =>
+			document.body.querySelectorAll('.BTNGroup > [id^="JSX_BTN"]').forEach(elm =>
 			{
+				// Support Base Changes
+				if (navigator.share)
+				{
+					elm.value = "SHARE";
+				}
+
 				elm.addEventListener('click', ActionHandler);
 			});
 
