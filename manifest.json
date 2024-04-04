@@ -1,8 +1,8 @@
 {
 	"name": "DGAKSSHRR",
-	"short_name": "JSXDGX",
-	"description": "JSXDGX PWA",
-	"categories": [],
+	"short_name": "DG AKSSHRR",
+	"description": "This is DGAKSSHRR's PWA Designed & Developed By JSX99. Special Thanks To Mr. Rakesh Soni For UI Designing & Wireframing.",
+	"categories": [ "metal", "business" ],
 	"start_url": "./DGX.html",
 	"scope": "./",
 	"lang": "en",
@@ -10,12 +10,13 @@
 	"display": "standalone",
 	"orientation": "portrait-primary",
 	"theme_color": "#59011c",
-	"background_color": "#fadeb4",
+	"background_color": "#59011c",
 	"icons": [
 		{
 			"src": "./Assets/media/DGAKSSHRR-Icon.png",
 			"sizes": "any",
-			"type": "image/png"
+			"type": "image/png",
+			"purpose": "maskable"
 		}
 	],
 	"shortcuts" : [
