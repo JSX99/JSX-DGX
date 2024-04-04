@@ -13,10 +13,10 @@
 	"background_color": "#59011c",
 	"icons": [
 		{
-			"src": "./Assets/media/DGAKSSHRR-Icon.png",
+			"src": "./Assets/media/DGAKSSHRR-Icon-BG.png",
 			"sizes": "any",
 			"type": "image/png",
-			"purpose": "maskable"
+			"purpose": "any"
 		}
 	],
 	"shortcuts" : [
@@ -26,7 +26,7 @@
 			"description": "Share Daily-Rates By Using JSXDGX",
 			"icons": [
 				{
-					"src": "./Assets/media/DGAKSSHRR-Icon.png",
+					"src": "./Assets/media/DGAKSSHRR-Icon-BG.png",
 					"sizes": "any",
 					"type": "image/png"
 				}
