@@ -22,6 +22,13 @@ self.addEventListener('install', iEvnt =>
 			"../../Assets/fonts/Roboto-Latin.woff2",
 			"../../Assets/fonts/Roboto-LatinExtended.woff2",
 			"../../Assets/js/html2canvas.js",
+			"../../Assets/media/DGAKSSHRR-Icon_72.png",
+			"../../Assets/media/DGAKSSHRR-Icon_96.png",
+			"../../Assets/media/DGAKSSHRR-Icon_128.png",
+			"../../Assets/media/DGAKSSHRR-Icon_144.png",
+			"../../Assets/media/DGAKSSHRR-Icon_192.png",
+			"../../Assets/media/DGAKSSHRR-Icon_256.png",
+			"../../Assets/media/DGAKSSHRR-Icon_512.png",
 			"../../Assets/media/DGAKSSHRR-Logo.svg",
 			"../../Assets/media/DGAKSSHRR-TagLine.svg",
 			"../../Assets/media/DGAKSSHRR-Title.svg",
@@ -30,37 +37,18 @@ self.addEventListener('install', iEvnt =>
 });
 
 // WebApp Activation
-// self.addEventListener('activate', event =>
-// {
-//     event.waitUntil(
-//         caches.keys().then(keys =>
-// 		{
-//             return Promise.all(keys.map(function (key, i)
-// 			{
-//                 if (key !== "JSXDGX") {
-//                     return caches.delete(keys[i]);
-//                 }
-//             }))
-//         })
-//     )
-// });
-
-// self.addEventListener('activate', evt => {
-//     evt.waitUntil(
-//         caches.keys().then(keys => {
-//             return Promise.all(keys
-//                 .filter(key => key !== staticCacheName)
-//                 .map(key => caches.delete(key))
-//             );
-//         })
-//     );
-// });
+self.addEventListener('activate', Evnt =>
+{
+    Evnt.waitUntil(caches.keys().then(keys =>
+	{
+		return Promise.all(keys.filter(key => key !== "JSXDGX").map(key => caches.delete(key)));
+	}));
+});
 
 // WebApp Cache Refresh
 self.addEventListener('fetch', Evnt => {
-    Evnt.respondWith(
-        caches.match(Evnt.request).then(cacheRes => {
-            return cacheRes || fetch(Evnt.request);
-        })
-    );
+    Evnt.respondWith(caches.match(Evnt.request).then(cacheRes =>
+	{
+		return cacheRes || fetch(Evnt.request);
+	}));
 });

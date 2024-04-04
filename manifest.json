@@ -2,7 +2,7 @@
 	"name": "DGAKSSHRR",
 	"short_name": "DG AKSSHRR",
 	"description": "This is DGAKSSHRR's PWA Designed & Developed By JSX99. Special Thanks To Mr. Rakesh Soni For UI Designing & Wireframing.",
-	"categories": [ "metal", "business" ],
+	"categories": [],
 	"start_url": "./DGX.html",
 	"scope": "./",
 	"lang": "en",
@@ -15,37 +15,44 @@
 		{
 			"src": "./Assets/media/DGAKSSHRR-Icon_72.png",
 			"type": "image/png",
-			"sizes": "72x72"
+			"sizes": "72x72",
+			"purpose": "any"
 		},
 		{
 			"src": "./Assets/media/DGAKSSHRR-Icon_96.png",
 			"type": "image/png",
-			"sizes": "96x96"
+			"sizes": "96x96",
+			"purpose": "any"
 		},
 		{
 			"src": "./Assets/media/DGAKSSHRR-Icon_128.png",
 			"type": "image/png",
-			"sizes": "128x128"
+			"sizes": "128x128",
+			"purpose": "any"
 		},
 		{
 			"src": "./Assets/media/DGAKSSHRR-Icon_144.png",
 			"type": "image/png",
-			"sizes": "144x144"
+			"sizes": "144x144",
+			"purpose": "any"
 		},
 		{
 			"src": "./Assets/media/DGAKSSHRR-Icon_192.png",
 			"type": "image/png",
-			"sizes": "192x192"
+			"sizes": "192x192",
+			"purpose": "any"
 		},
 		{
 			"src": "./Assets/media/DGAKSSHRR-Icon_256.png",
 			"type": "image/png",
-			"sizes": "256x256"
+			"sizes": "256x256",
+			"purpose": "any"
 		},
 		{
 			"src": "./Assets/media/DGAKSSHRR-Icon_512.png",
 			"type": "image/png",
-			"sizes": "512x512"
+			"sizes": "512x512",
+			"purpose": "any"
 		},
 		{
 			"src": "./Assets/media/DGAKSSHRR-Logo.svg",
