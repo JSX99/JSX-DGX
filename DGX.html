@@ -3,7 +3,7 @@
 	***              			                  ***
 	***     Author : https://github.com/JSX99     ***
 	***              			                  ***
-	*** (C) 2023 JSX STUDIO, All Rights Reserved. ***
+	*** (C) 2024 JSX STUDIO, All Rights Reserved. ***
 	***              			                  ***
 	*************************************************
 -->
@@ -11,14 +11,19 @@
 <html lang="en" dir="ltr" oncontextmenu="return true;">
 <head>
 
+	<!-- Title Declaration -->
 	<title>JSX99 - DGX</title>
+
+	<!-- META : Encoding, Viewport Settings -->
 	<meta charset="utf-8">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store">
-	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1">
-
+	
+	<!-- META : Cache Prevention -->
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store">
+	
 	<!-- META Information -->
 	<meta name="subject" content="JSX - DGAKSSHRR">
 	<meta name="description" content="JSX99's DGAKSSHRR WebApp">
@@ -26,32 +31,80 @@
 	<meta name="copyright" content="JSX99, JSX Studio">
 	<meta name="keywords" content="JSX99, DGAKSSHRR">
 
-	<!-- META : Browser Compatibility Settings -->
+	<!-- META : OG Information -->
+	<meta property="og:title" content="JSX DGAKSSHRR">
+	<meta property="og:description" content="JSX99's DGAKSSHRR WebApp">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="DGXWebApp">
+	<meta property="og:region" content="IN">
+	<meta property="og:url" content="https://JSX99.github.io/JSX-DGX">
+	<meta property="og:image" content="./Assets/media/DGAKSSHRR-Logo.svg">
+
+	<!-- META : Browser Settings -->
 	<meta name="language" content="en">
-	<meta name="color-scheme" content="auto">
+	<meta name="referrer" content="no-referrer">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="content-language" content="en">
+	<!--meta http-equiv="X-Frame-Options" content="deny"-->
+	<!--meta http-equiv="Content-Security-Policy" content="default-src 'self'"-->
+
+	<!-- META : Theme Settings -->
+	<meta name="color-scheme" content="normal">
 	<meta name="theme-color" content="#59011c">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#59011c">
 
-	<!-- META : Mobile Devices Preferences -->
+	<!-- META : Mobile-Device Settings -->
 	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="DGXWebApp">
 	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name='apple-touch-fullscreen' content='yes'>
 
 	<!-- META : JSX99's WebApp Information -->
-	<meta name="JSXCRV" content="v2.3">
+	<meta name="JSXCRV" content="v2.4">
 	<meta name="JSXCRD" content="2023-10-11">
-	<meta name="JSXLMD" content="2023-12-11">
-	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.3), RequiredBy=(Client)">
+	<meta name="JSXLMD" content="2024-04-04">
+	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.4), RequiredBy=(Client)">
 
-	<!-- LINK : ICONS, FAVICONS, SHORTCUT ICONS -->
-	<link rel="icon" sizes="64x64" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-Logo.svg">
+	<!-- LINK : Configurations -->
+	<link rel="me" href="https://github.com/JSX99">
+	<link rel="canonical" href="https://JSX99.github.io/JSX-DGX">
+
+	<!-- LINK : ICONS, SHORTCUT ICONS -->
+	<link rel="icon" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-Logo.svg">
+	<link rel="shortcut icon" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-Logo.svg">
+	<link rel="mask-icon" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-Logo.svg" color="#000">
+	<link rel="apple-touch-icon" type="image/svg+xml" href="./Assets/media/DGAKSSHRR-Logo.svg">
+
+	<!-- LINK : MANIFEST -->
+	<link rel="manifest" href="./manifest.json">
 
 	<!-- LINK : EXTERNAL STYLESHEETS -->
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+	<!--link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"-->
 
 	<!-- STYLE : Page Style Declaration -->
 	<style type="text/css">
 
 		@charset "utf-8";
+
+		/* Latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url('./Assets/fonts/Roboto-LatinExtended.woff2') format('woff2');
+			unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		
+		/* Latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url('./Assets/fonts/Roboto-Latin.woff2') format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
 		
 		:root {
 			--Primary_FG: #fadeb4;
@@ -326,7 +379,7 @@
 <body oncontextmenu="return true;">
 
 	<!-- HEADER -->
-	<header onclick="location.reload(true)">
+	<header data-onclick="location.reload(true)">
 		<img alt="logo" src="./Assets/media/DGAKSSHRR-Logo.svg" width="60" />
 		<div class="TitleGroup">
 			<img alt="Title" src="./Assets/media/DGAKSSHRR-Title.svg" width="120" />
@@ -338,7 +391,7 @@
 	<section id="SAVEUI" class="JSX-UI">
 		
 		<!-- HEADER / LOGO -->
-		<section style="display: flex;justify-content: center;align-items: center;gap:5px;margin:20px 0;margin-top:30px;">
+		<section style="display: flex;justify-content: center;align-items: center;gap:5px;margin:20px 0;margin-top:15px;">
 
 			<img alt="logo" src="./Assets/media/DGAKSSHRR-Logo.svg" width="60">
 			<div style="display: flex;flex-direction: column;gap:10px">
@@ -355,7 +408,7 @@
 			
 			<!-- GOLD-24 -->
 			<div style="align-self: flex-start;margin: 0px 22px;font-size: 14px;">24KT Gold Rate</div>
-			<div style="display: flex;align-items: center;justify-content: flex-start;margin: 4px 22px;font-size: 20px;font-weight: 700;color: #59011c;background: #ffefd8;width:286px;height: 37px;border-radius: 5px;padding: 4px 10px;box-sizing:border-box;align-content: center;vertical-align: middle;flex-direction: row;flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_GR24" style="">0.00</span></div>
+			<div style="display: flex;align-items: center;justify-content: flex-start;margin: 4px 22px;font-size: 20px;font-weight: 700;color: #59011c;background: #ffefd8;width:286px;height: 37px;border-radius: 5px;padding: 4px 10px;box-sizing:border-box;align-content: center;vertical-align: middle;flex-direction: row;flex-wrap: wrap;">₹&nbsp;<span id="JSX_SUI_GR24">0.00</span></div>
 			
 			<!-- GOLD-22 -->
 			<div style="align-self: flex-start;margin: 0px 22px;margin-top:15px;font-size: 14px;">22KT Gold Rate</div>
@@ -372,7 +425,7 @@
 				Last updated on <span id="JSX_SUI_LAST">00/00/0000</span>
 			</div>
 
-			<div style="font-size:13px; margin: 4px 0; margin-top: 24px;visibility: hidden;">NOTE : <span id="JSX_SUI_TAX">0</span>% GST Included.</div>
+			<div style="font-size:13px; margin: 4px 0; margin-top: 24px;visibility: hidden;">NOTE : <span id="JSX_SUI_TAX">0</span>% GST Included along <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with labour charges.</div>
 			<div style="font-size:13px;">LAGDI : 1, 2, 5, 10, 20, 50, 100 g</div>
 
 		</section>
@@ -426,7 +479,7 @@
 							<label for="JSX_INP_TXX" data-mode="INR ( ₹ )">GST</label>
 							<div class="INPGroup">
 								<span style="font-size:1.3rem;font-weight:600;margin-right:0.1%">%&emsp;&emsp;</span>
-								<input id="JSX_INP_TXX" title="Enter GST Percentage" class="JSX_IN" type="number" min="0" value="10" max="100" />
+								<input id="JSX_INP_TXX" title="Enter GST Percentage" class="JSX_IN" type="number" min="0" value="3" max="100" />
 							</div>
 						</td>
 					</tr>
@@ -470,10 +523,20 @@
 		// JS Strict-Mode
 		'use strict';
 
+		window.addEventListener('load', async function()
+		{
+			if('serviceWorker' in navigator)
+			{
+				navigator.serviceWorker.register('./Assets/js/sw.js').then(reg => console.log('JSX Studio')).catch(err => console.error('JSX Studio', err));
+			}
+		});
+
 		window.addEventListener('DOMContentLoaded', async function()
 		{
 			// Reusable Variable
 			let _TMP = undefined;
+			let _STG = undefined || window.localStorage || localStorage;
+			let _STGD = undefined;
 
 			// Settingup Title Dynamically / Programatically
 			document.head.querySelector('title').textContent = x99([68, 46, 71, 46, 32, 65, 75, 83, 83, 72, 82, 82, 32, 82, 97, 116, 101, 115]);
@@ -521,6 +584,65 @@
 				return tax == 0 ? _TMP : _TMP + ((_TMP * tax) / 100);
 			}*/
 
+			function StorageInit()
+			{
+				if (_STG != undefined)
+				{
+					try
+					{
+						_STGD = JSON.parse(_STG.getItem('JSXDGX'));
+						if (_STGD != null && _STGD != undefined)
+						{
+							JSX_INP_G24.value = _STGD['G24'] ?? 0;
+							JSX_INP_G22.value = _STGD['G22'] ?? 0;
+							JSX_INP_S24.value = _STGD['S24'] ?? 0;
+							JSX_INP_TXX.value = _STGD['TXX'] ?? 0;
+						}
+						else
+						{
+							_STGD = {"G24":0,"G22":0,"S24":0,"TXX":3,"CNT":0,"LMD":0};
+							_STG.setItem('JSXDGX', JSON.stringify(_STGD));
+						}
+					}
+					catch
+					{
+						Reset();
+					}
+				}
+			}
+
+			function StorageGetValue(keyI)
+			{
+				return parseInt(_STGD[keyI]);
+			}
+
+			function StorageUpdate(keyI, valU)
+			{
+				if (_STG != undefined)
+				{
+					if (_STGD != null && _STGD != undefined)
+					{
+						if (Object.keys(_STGD).includes(keyI))
+						{
+							_STGD[keyI] = valU;
+							_STG.setItem('JSXDGX', JSON.stringify(_STGD));
+						}
+					}
+				}
+			}
+
+			function Reset()
+			{
+				// Reset All Values
+				JSX_INP_G24.value = 0;
+				JSX_INP_G22.value = 0;
+				JSX_INP_S24.value = 0;
+				JSX_INP_TXX.value = 3;
+
+				// Reset Storage Object
+				//_STG.clear();
+			}
+
 			function ActionHandler(e)
 			{
 				e.preventDefault();
@@ -547,8 +669,8 @@
 					
 					
 					_TMP.querySelector("#JSX_SUI_LAST").textContent = new Date().toLocaleDateString('en-GB');
-					_TMP.querySelector("#JSX_SUI_CNT0").textContent = x99([72, 105, 116, 101, 115, 104, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 56, 49, 50, 56, 54, 53, 53, 56, 57, 48]);
-					_TMP.querySelector("#JSX_SUI_CNT1").textContent = x99([65, 106, 97, 121, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 57, 57, 57, 56, 57, 57, 53, 49, 50, 49]);
+					_TMP.querySelector("#JSX_SUI_CNT0").textContent = x99([72, 105, 116, 101, 115, 104, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 32, 56, 49, 50, 56, 54, 53, 53, 56, 57, 48]);
+					_TMP.querySelector("#JSX_SUI_CNT1").textContent = x99([65, 106, 97, 121, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 32, 57, 57, 57, 56, 57, 57, 53, 49, 50, 49]);
 					_TMP.querySelector("#JSX_SUI_ADD").textContent = x99([53, 56, 50, 44, 32, 75, 97, 118, 105, 115, 104, 119, 97, 114, 32, 80, 111, 108, 101, 44, 32, 78, 114, 46, 32, 66, 97, 108, 97, 32, 72, 97, 110, 117, 109, 97, 110, 32, 84, 101, 109, 112, 108, 101, 44, 32, 75, 104, 97, 100, 105, 97, 44, 32, 65, 104, 109, 101, 100, 97, 98, 97, 100, 32, 45, 32, 51, 56, 48, 48, 48, 49]);
 
 					html2canvas(document.querySelector("#SAVEUI"),
@@ -601,15 +723,29 @@
 
 					});
 
+					// SAVE Count Store
+					StorageUpdate("G24", parseInt(JSX_INP_G24.value || "0"));
+					StorageUpdate("G22", parseInt(JSX_INP_G22.value || "0"));
+					StorageUpdate("S24", parseInt(JSX_INP_S24.value || "0"));
+					StorageUpdate("TXX", parseInt(JSX_INP_TXX.value || "0"));
+					StorageUpdate("CNT", StorageGetValue('CNT') + 1);
+					StorageUpdate("LMD", new Date().getTime());
+
 					return;
 				}
 			}
+
+			// Header Reset Button
+			document.querySelector('header').addEventListener('click', () => 
+			{
+				Reset();
+			});
 
 			// EventListener Setup For All Input Elements
 			document.body.querySelectorAll('[id^="JSX_IN"]').forEach(elm =>
 			{
 				// Settingup Default Value
-				elm.value = (elm.dataset.metal) ? "0" : "10";
+				elm.value = (elm.dataset.metal) ? "0" : "3";
 				
 				// Select All Texts Once Box Focused
 				elm.addEventListener('focus', function()
@@ -675,6 +811,9 @@
 
 				elm.addEventListener('click', ActionHandler);
 			});
+
+			// Storage Init
+			StorageInit();
 
 		});
 

@@ -1,0 +1,39 @@
+{
+	"name": "DGAKSSHRR",
+	"short_name": "JSXDGX",
+	"description": "JSXDGX PWA",
+	"categories": [],
+	"start_url": "./DGX.html",
+	"scope": "./",
+	"lang": "en",
+	"dir": "ltr",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"theme_color": "#59011c",
+	"background_color": "#fadeb4",
+	"icons": [
+		{
+			"src": "./Assets/media/DGAKSSHRR-Icon.png",
+			"sizes": "any",
+			"type": "image/png"
+		}
+	],
+	"shortcuts" : [
+		{
+			"name": "Share Daily-Rates",
+			"url": "./",
+			"description": "Share Daily-Rates By Using JSXDGX",
+			"icons": [
+				{
+					"src": "./Assets/media/DGAKSSHRR-Icon.png",
+					"sizes": "any",
+					"type": "image/png"
+				}
+			]
+		}
+	],
+	"launch_handler": {
+		"client_mode": [ "focus-existing", "auto" ]
+	},
+	"prefer_related_applications": false
+}
