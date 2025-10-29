@@ -61,10 +61,10 @@
 	<meta name='apple-touch-fullscreen' content='yes'>
 
 	<!-- META : JSX99's WebApp Information -->
-	<meta name="JSXCRV" content="v2.5">
+	<meta name="JSXCRV" content="v2.6">
 	<meta name="JSXCRD" content="2023-10-11">
-	<meta name="JSXLMD" content="2024-04-10">
-	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.5), RequiredBy=(Client)">
+	<meta name="JSXLMD" content="2025-10-29">
+	<meta name="JSXDTL" content="Name=(DGAKSSHRR), Version=(v2.6), RequiredBy=(Client)">
 
 	<!-- LINK : Configurations -->
 	<link rel="me" href="https://github.com/JSX99">
@@ -407,7 +407,7 @@
 		<!-- RATES -->
 		<section style="display:flex;flex-direction:column;justify-content:center;align-items:center;letter-spacing:1.2px;margin:0;margin-top:20px;margin-bottom: 8px;">
 				
-			<h3 style="margin:15px 0;">GOLD RATES</h3>
+			<h3 style="margin-bottom:15px;">GOLD RATES</h3>
 			
 			<!-- GOLD-24 -->
 			<div style="align-self:flex-start;margin:0px 22px;font-size:14px;">24KT Gold Rate</div>
@@ -417,7 +417,7 @@
 			<div style="align-self:flex-start;margin:0px 22px;margin-top:15px;font-size:14px;">22KT Gold Rate</div>
 			<div style="display:flex;align-items:center;justify-content:flex-start;margin:4px 22px;font-size:20px;font-weight:700;color:#59011C;background:#ffefd8;width:286px;height:37px;border-radius:5px;padding:4px 10px;box-sizing:border-box;align-content:center;vertical-align:middle;flex-direction:row;flex-wrap:wrap;">₹&nbsp;<span id="JSX_SUI_GR22">0.00</span></div>
 
-			<h3 style="margin:15px 0; margin-top: 34px;">SILVER RATES</h3>
+			<h3 style="margin:15px 0; margin-top: 24px;">SILVER RATES</h3>
 
 			<!-- SILVER-22 -->
 			<div style="align-self:flex-start;margin:0px 22px;font-size:14px;">24KT Silver Rate</div>
@@ -436,10 +436,11 @@
 		<!-- CONTACT SECTION -->
 		<section style="display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:0.8rem;margin:15px 0;margin-top:0;">
 
-			<div data-name="CONTACT-DETAILS" style="display:flex;flex-direction:column;justify-content:center;align-items: flex-end;letter-spacing:1.25px;margin:15px 0;margin-top:0px;margin-bottom:10px;font-size:14px;">
+			<div data-name="CONTACT-DETAILS" style="display:flex;flex-direction:column;justify-content:center;align-items:center;letter-spacing:1.25px;margin:15px 0;margin-top:0px;margin-bottom:10px;font-size:14px;">
 				<h3 style="align-self:center;margin:10px 0;margin-top:20px;font-size:16px;">CONTACT US</h3>
 				<span id="JSX_SUI_CNT0"></span>
 				<span id="JSX_SUI_CNT1" style="margin-top:4px;"></span>
+				<span id="JSX_SUI_CNT2" style="margin-top:4px;"></span>
 			</div>
 			
 			<div data-name="LOCATION-DETAILS" style="display:flex;flex-direction:column;justify-content:center;align-items:center;margin:20px 0;margin-top:0;letter-spacing:1.25px;">
@@ -706,14 +707,17 @@
 					_TMP.querySelector("#JSX_SUI_SR24").innerText = INRFormatter(document.querySelector("#JSX_INP_S24").value) ?? "0.00";
 
 					// TAX
-					_TMP.querySelector("#JSX_SUI_TAX").textContent = "3"/*document.querySelector("#JSX_INP_TXX").value ?? 0*/;
+					_TMP.querySelector("#JSX_SUI_TAX").textContent = "3";
 					_TMP.querySelector("#JSX_SUI_TAX").parentElement.style.visibility = /*document.querySelector("#JSX_INP_TXX").value == 0 ? "hidden" : */"visible";
 					
 					// Other Details
 					_TMP.querySelector("#JSX_SUI_LAST").textContent = new Date().toLocaleDateString('en-GB');
-					_TMP.querySelector("#JSX_SUI_CNT0").textContent = x99([72, 105, 116, 101, 115, 104, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 32, 56, 49, 50, 56, 54, 53, 53, 56, 57, 48]);
-					_TMP.querySelector("#JSX_SUI_CNT1").textContent = x99([65, 106, 97, 121, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 32, 57, 57, 57, 56, 57, 57, 53, 49, 50, 49]);
-					_TMP.querySelector("#JSX_SUI_ADD").textContent = x99([53, 56, 50, 44, 32, 75, 97, 118, 105, 115, 104, 119, 97, 114, 32, 80, 111, 108, 101, 44, 32, 78, 114, 46, 32, 66, 97, 108, 97, 32, 72, 97, 110, 117, 109, 97, 110, 32, 84, 101, 109, 112, 108, 101, 44, 32, 75, 104, 97, 100, 105, 97, 44, 32, 65, 104, 109, 101, 100, 97, 98, 97, 100, 32, 45, 32, 51, 56, 48, 48, 48, 49]);
+					// _TMP.querySelector("#JSX_SUI_CNT0").textContent = x99([72, 105, 116, 101, 115, 104, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 32, 56, 49, 50, 56, 54, 53, 53, 56, 57, 48]);
+					_TMP.querySelector("#JSX_SUI_CNT0").textContent = x99([72, 105, 116, 101, 115, 104, 32, 82, 46, 32, 83, 111, 110, 105, 44, 32, 65, 106, 97, 121, 32, 82, 46, 32, 83, 111, 110, 105]);
+					// _TMP.querySelector("#JSX_SUI_CNT1").textContent = x99([65, 106, 97, 121, 32, 82, 46, 32, 83, 111, 110, 105, 32, 58, 32, 43, 57, 49, 32, 57, 57, 57, 56, 57, 57, 53, 49, 50, 49]);
+					_TMP.querySelector("#JSX_SUI_CNT1").textContent = x99([80, 104, 111, 110, 101, 32, 58, 32, 56, 51, 50, 48, 55, 53, 53, 54, 54, 57]);
+					_TMP.querySelector("#JSX_SUI_CNT2").textContent = x99([84, 105, 109, 105, 110, 103, 115, 32, 58, 32, 49, 49, 58, 48, 48, 32, 65, 77, 32, 45, 32, 48, 54, 58, 48, 48, 32, 80, 77]);
+					_TMP.querySelector("#JSX_SUI_ADD").textContent = x99([50, 49, 55, 44, 32, 71, 70, 44, 32, 65, 100, 97, 115, 97, 115, 32, 75, 104, 97, 100, 107, 105, 44, 32, 80, 97, 116, 97, 115, 97, 32, 80, 111, 108, 101, 44, 32, 71, 97, 110, 100, 104, 105, 32, 82, 111, 97, 100, 44, 32, 65, 104, 109, 101, 100, 97, 98, 97, 100, 32, 45, 32, 51, 56, 48, 48, 48, 48]);
 
 					// Converting Data Into Image
 					html2canvas(_TMP,
